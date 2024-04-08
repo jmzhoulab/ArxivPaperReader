@@ -53,7 +53,7 @@ def get_save_dir(time: str):
         idx = index_lines.index('.. toctree::\n') + 1
         with open(os.path.join(DOCS_DIR, 'index.rst'), 'w') as f:
             f.writelines(index_lines[:idx])
-            f.writelines(sorted(index_lines[idx:]))
+            f.writelines(sorted(set(index_lines[idx:])))
     return save_dir
 
 
@@ -66,7 +66,7 @@ def update_index(file_path: str):
     idx = index_lines.index('   :maxdepth: 3\n') + 1
     with open(os.path.join(index_dir, 'index.rst'), 'w') as f:
         f.writelines(index_lines[:idx])
-        f.writelines(sorted(index_lines[idx:]))
+        f.writelines(sorted(set(index_lines[idx:])))
 
 
 def paper_from_email(latest_date: str):
