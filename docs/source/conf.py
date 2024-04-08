@@ -6,8 +6,8 @@ project = 'ArxivDailyPaper'
 copyright = '2024, JiamuZhou'
 author = 'JiamuZhou'
 
-release = '0.1'
-version = '0.1.0'
+release = ''
+version = ''
 
 # -- General configuration
 
