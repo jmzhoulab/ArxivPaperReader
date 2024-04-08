@@ -1,9 +1,12 @@
 import os
 import re
+import textwrap
+from dotenv import load_dotenv
 
-from .email_helper import EmailReader
-from .parser import PaperParser
+from email_helper import EmailReader
+from paper_parser import PaperParser
 
+load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
@@ -12,10 +15,10 @@ DOCS_DIR = os.path.join(BASE_DIR, 'docs', 'source')
 
 def get_latest_date():
     latest_file = os.path.join(BASE_DIR, 'latest.date')
-    latest_date = '20230101'
+    latest_date = '230101'
     if os.path.exists(latest_file):
         content = ''.join(open(latest_file, 'r').readlines())
-        latest_date = re.findall('(\d{8})', content)
+        latest_date = re.findall('(\d{6})', content)
         if latest_date:
             latest_date = latest_date[0]
     return latest_date
@@ -27,50 +30,87 @@ def update_latest_date(latest_date):
         f.write(latest_date)
 
 
+def get_save_dir(time: str):
+    name = f'20{time[:4]}'
+    save_dir = os.path.join(DOCS_DIR, name)
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+        with open(os.path.join(save_dir, 'index.rst'), 'w') as f:
+            f.write(
+                textwrap.dedent(f"""
+                {name}
+                ======
+
+                .. toctree::
+                   :glob:
+                   :maxdepth: 3
+                """)
+            )
+        
+        # update root index.rst
+        index_lines = open(os.path.join(DOCS_DIR, 'index.rst')).readlines()
+        index_lines.append(f'   {name}/index\n')
+        idx = index_lines.index('.. toctree::\n') + 1
+        with open(os.path.join(DOCS_DIR, 'index.rst'), 'w') as f:
+            f.writelines(index_lines[:idx])
+            f.writelines(sorted(index_lines[idx:]))
+    return save_dir
+
+
+def update_index(file_path: str):
+    index_dir = os.path.dirname(file_path)
+    file_name = os.path.basename(file_path)
+
+    index_lines = open(os.path.join(index_dir, 'index.rst')).readlines()
+    index_lines.append(f'   {file_name}\n')
+    idx = index_lines.index('   :maxdepth: 3\n') + 1
+    with open(os.path.join(index_dir, 'index.rst'), 'w') as f:
+        f.writelines(index_lines[:idx])
+        f.writelines(sorted(index_lines[idx:]))
+
+
+def paper_from_email(latest_date: str):
+    email_user = os.getenv('EMAIL_USER', None)
+    auth_code = os.getenv('EMAIL_AUTH_CODE', None)
+
+    assert email_user and auth_code, "Missing email user or auth code."
+
+    email_reader = EmailReader(email_user, auth_code)
+    emails = email_reader.parse_email_server(min_date=latest_date, part_dir=DATA_DIR)
+    return emails
+
+
+def paper_from_path(path: str, latest_date: str):
+    items = []
+    files = os.listdir(path)
+    for file in files:
+        if not file.endswith('.txt'):
+            continue
+        file_date = re.findall('\d{6}', file)[0]
+        if file_date <= latest_date:
+            continue
+        items.append({'time': file_date, 'parts': [os.path.join(path, file)]})
+    return items
+
 
 if __name__=='__main__':
     latest_date = get_latest_date()
 
     parser = PaperParser()
+    
+    # items = paper_from_email(latest_date=latest_date)
+    items = paper_from_path(path=DATA_DIR, latest_date=latest_date)
 
-    email_reader = EmailReader('xxxx@163.com', 'xxxx')
-    emails = email_reader.parse_email_server(min_date=latest_date[2:], part_dir=DATA_DIR)
-
-    for email in emails:
-        if len(email['parts']) == 0:
-            print("未发现附件", email)
+    for items in items:
+        if len(items['parts']) == 0:
+            print("未发现附件", items)
             continue
-        for part_file in email['parts']:
-            parser.extra_paper(input_file=part_file, output_file=)
+        print('============', items['time'], '============')
+        save_dir = get_save_dir(items['time'])
+        output_file = os.path.join(save_dir, items['time']+'.rst')
+        parser.extra_paper(input_file=items['parts'][0], output_file=output_file)
 
+        update_index(file_path=output_file)
 
-
-    last_date = sorted([f.split('_')[1].split('.')[0] for f in os.listdir(data_dir) if f.endswith('.txt')])
-    if len(last_date) > 0:
-        last_date = last_date[-1]
-    else:
-        last_date = ''
-    print(f"last_date: {last_date}")
-
-    # 读取邮件的内容
-
-    items = obj.parse_email_server(min_date=last_date)
-    print("读取邮件完成~")
-    # for item in items:
-    #     print(item)
-    #     show_item = copy.deepcopy(item)
-    #     show_item['content'] = item['content'][:50]
-    #     print(show_item)
-    #     file_name = 'paper_' + item['time'] + '.txt'
-    #     print(f"Saved content to file {file_name}")
-    #     with open(os.path.join(data_dir, file_name), mode='w', encoding='utf-8') as writer:
-    #         writer.write(item['content'])
-
-    # 解析文章
-    files = os.listdir(data_dir)
-    for file in files:
-        if file.endswith('.md'):
-            continue
-        if file.replace('.txt', '.md') in files:
-            continue
-        extra_paper(os.path.join(data_dir, file))
+        if items['time'] > latest_date:
+            update_latest_date(latest_date=items['time'])

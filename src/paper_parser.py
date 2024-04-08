@@ -48,11 +48,11 @@ class PaperParser:
 
                 # 只考虑包含关键词的
                 title_abstract = title.lower() + '\n' + abstract.lower()
-                if not any([kw.lower() in title_abstract for kw in key_words]):
-                    print("================= SKIP =================")
-                    print("Title:", title)
-                    print("Abstract:", abstract)
-                    print("=========================================")
+                if not any([kw.lower() in title_abstract for kw in self.key_words]):
+                    # print("================= SKIP =================")
+                    # print("Title:", title)
+                    # print("Abstract:", abstract)
+                    # print("=========================================")
                     continue
 
                 arxiv_id = re.findall('https://arxiv.org/abs/(\d+\.\d+)', paper['url'])[0]
@@ -63,10 +63,10 @@ class PaperParser:
                                         date=paper['date'],
                                         authors=authors,
                                         abstract=abstract)
-                print(out_content)
+                # print(out_content)
                 outfile.write(out_content+'\n')
                 outfile.flush()
-                print(f"num {num}, {file}\n{title}\n")
+                print(f"num {num}, {input_file}\n{title}\n")
             else:
                 print("================= ERROR =================")
                 print(content)

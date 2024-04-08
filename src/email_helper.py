@@ -53,7 +53,6 @@ class EmailReader:
             # 邮件的From, To, Subject存在于根对象上:
             # 调用解析邮件头部内容的函数
             item.update(EmailReader.parser_email_header(msg))
-            print(item)
             if 'paper_' not in item['subject']:
                 continue
             item['content'] = self.parser_content(msg)
@@ -73,8 +72,6 @@ class EmailReader:
             for part in msg.walk():
                 file_name = part.get_filename()
                 if file_name is None:
-                    continue
-                if not re.match('^paper_\d{6}.md$', file_name):
                     continue
                 data = part.get_payload(decode=True)  # 下载附件
                 att_path = os.path.join(part_dir, file_name)

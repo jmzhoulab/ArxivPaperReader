@@ -1,7 +1,13 @@
-202401
+
+202402
 ======
 
-.. autosummary::
-   :toctree: generated
-
-   lumache
+.. toctree::
+   :glob:
+   :maxdepth: 3
+   240227.rst
+   240227.rst
+   240228.rst
+   240228.rst
+   240229.rst
+   240229.rst
