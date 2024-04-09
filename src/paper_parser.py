@@ -9,7 +9,8 @@ from datetime import datetime
 PATTERN = re.compile(r'.*?Date:(?P<date>.*?GMT).*?Title:(?P<title>.*?)Authors:(?P<authors>.*?)Categories.*?\\\\(?P<abstract>.*?)\\\\.*?(?P<url>https://arxiv.org/.*?)[ ,].*?', re.DOTALL)
 PATTERN_revised = re.compile(r'.*?(?P<date>replaced.*?GMT).*?Title:(?P<title>.*?)Authors:(?P<authors>.*?)(?P<abstract>Categories.*?).*?(?P<url>https://arxiv.org/.*?)[ ,].*?', re.DOTALL)
 
-TEMPLATE = """`[{arxiv_id}] {title} <{url}>`__
+TEMPLATE = """
+`[{arxiv_id}] {title} <{url}>`__
 
 ::
 
@@ -18,8 +19,7 @@ TEMPLATE = """`[{arxiv_id}] {title} <{url}>`__
 
 {abstract}
 
-------------
-"""
+""".strip()
 
 
 class PaperParser:
@@ -36,6 +36,7 @@ class PaperParser:
         outfile.write(f"{title}\n========\n\n")
         redundant = ''
         num = 0
+        is_first = True
         for content in text_list:
             result = PATTERN.match(content)
             result = result or PATTERN_revised.match(content)
@@ -65,8 +66,11 @@ class PaperParser:
                                         authors=authors,
                                         abstract=abstract)
                 # print(out_content)
+                if not is_first:
+                    outfile.write('\n' + '-'*12 + '\n\n')
                 outfile.write(out_content+'\n')
                 outfile.flush()
+                is_first = False
                 # print(f"num {num}, {input_file}\n{title}\n")
             else:
                 redundant += content.strip() + '\n'

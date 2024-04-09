@@ -1,12 +1,10 @@
 import os
 import re
 import textwrap
-from dotenv import load_dotenv
 
 from email_helper import EmailReader
 from paper_parser import PaperParser
 
-load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
@@ -52,7 +50,7 @@ def get_save_dir(time: str):
         index_lines.append(f'   {name}/index\n')
         idx = index_lines.index('.. toctree::\n') + 1
         with open(os.path.join(DOCS_DIR, 'index.rst'), 'w') as f:
-            f.writelines(index_lines[:idx])
+            f.writelines(index_lines[:idx]+['\n'])
             f.writelines(sorted(set(index_lines[idx:])))
     return save_dir
 
@@ -65,11 +63,14 @@ def update_index(file_path: str):
     index_lines.append(f'   {file_name}\n')
     idx = index_lines.index('   :maxdepth: 3\n') + 1
     with open(os.path.join(index_dir, 'index.rst'), 'w') as f:
-        f.writelines(index_lines[:idx])
+        f.writelines(index_lines[:idx]+['\n'])
         f.writelines(sorted(set(index_lines[idx:])))
 
 
 def paper_from_email(latest_date: str):
+    from dotenv import load_dotenv
+
+    load_dotenv()
     email_user = os.getenv('EMAIL_USER', None)
     auth_code = os.getenv('EMAIL_AUTH_CODE', None)
 
