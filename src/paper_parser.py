@@ -20,7 +20,7 @@ TEMPLATE = """
 {abstract}
 
 ------------
-"""
+""".strip()
 
 
 class PaperParser:
@@ -28,12 +28,13 @@ class PaperParser:
         self.key_words = key_words
 
     def extra_paper(self, input_file: str, output_file: str):
+        print(input_file)
         lines = open(input_file, encoding='utf-8').readlines()
         text = ''.join(lines)
         text_list = re.split('---------------+', text)
 
         outfile = open(output_file, mode='w', encoding='utf-8')
-
+        redundant = ''
         num = 0
         for content in text_list:
             result = PATTERN.match(content)
@@ -66,9 +67,10 @@ class PaperParser:
                 # print(out_content)
                 outfile.write(out_content+'\n')
                 outfile.flush()
-                print(f"num {num}, {input_file}\n{title}\n")
+                # print(f"num {num}, {input_file}\n{title}\n")
             else:
-                print("================= ERROR =================")
-                print(content)
-                print("=========================================")
+                redundant += content.strip() + '\n'
+        print("-------------------------------- Redundant --------------------------------")
+        print(redundant.strip())
+        print("---------------------------------------------------------------------------\n")
         outfile.close()

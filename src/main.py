@@ -44,7 +44,7 @@ def get_save_dir(time: str):
                 .. toctree::
                    :glob:
                    :maxdepth: 3
-                """)
+                """).lstrip()
             )
         
         # update root index.rst
@@ -100,17 +100,18 @@ if __name__=='__main__':
     
     # items = paper_from_email(latest_date=latest_date)
     items = paper_from_path(path=DATA_DIR, latest_date=latest_date)
-
-    for items in items:
-        if len(items['parts']) == 0:
-            print("未发现附件", items)
+    max_date = latest_date
+    for item in items:
+        if len(item['parts']) == 0:
+            print("未发现附件", item)
             continue
-        print('============', items['time'], '============')
-        save_dir = get_save_dir(items['time'])
-        output_file = os.path.join(save_dir, items['time']+'.rst')
-        parser.extra_paper(input_file=items['parts'][0], output_file=output_file)
+        # print('============', item['time'], '============')
+        save_dir = get_save_dir(item['time'])
+        output_file = os.path.join(save_dir, item['time']+'.rst')
+        parser.extra_paper(input_file=item['parts'][0], output_file=output_file)
 
         update_index(file_path=output_file)
 
-        if items['time'] > latest_date:
-            update_latest_date(latest_date=items['time'])
+        if item['time'] > max_date:
+            max_date = item['time']
+            update_latest_date(latest_date=max_date)
