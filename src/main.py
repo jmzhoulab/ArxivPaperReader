@@ -108,7 +108,7 @@ if __name__=='__main__':
         # print('============', item['time'], '============')
         save_dir = get_save_dir(item['time'])
         output_file = os.path.join(save_dir, item['time']+'.rst')
-        parser.extra_paper(input_file=item['parts'][0], output_file=output_file)
+        parser.extra_paper(input_file=item['parts'][0], output_file=output_file, title=item['time'])
 
         update_index(file_path=output_file)
 

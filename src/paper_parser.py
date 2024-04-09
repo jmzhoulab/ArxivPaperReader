@@ -9,8 +9,7 @@ from datetime import datetime
 PATTERN = re.compile(r'.*?Date:(?P<date>.*?GMT).*?Title:(?P<title>.*?)Authors:(?P<authors>.*?)Categories.*?\\\\(?P<abstract>.*?)\\\\.*?(?P<url>https://arxiv.org/.*?)[ ,].*?', re.DOTALL)
 PATTERN_revised = re.compile(r'.*?(?P<date>replaced.*?GMT).*?Title:(?P<title>.*?)Authors:(?P<authors>.*?)(?P<abstract>Categories.*?).*?(?P<url>https://arxiv.org/.*?)[ ,].*?', re.DOTALL)
 
-TEMPLATE = """
-`[{arxiv_id}] {title} <{url}>`__
+TEMPLATE = """`[{arxiv_id}] {title} <{url}>`__
 
 ::
 
@@ -20,20 +19,21 @@ TEMPLATE = """
 {abstract}
 
 ------------
-""".strip()
+"""
 
 
 class PaperParser:
     def __init__(self, key_words: list=['LLM', 'large language model']) -> None:
         self.key_words = key_words
 
-    def extra_paper(self, input_file: str, output_file: str):
+    def extra_paper(self, input_file: str, output_file: str, title: str=None):
         print(input_file)
         lines = open(input_file, encoding='utf-8').readlines()
         text = ''.join(lines)
         text_list = re.split('---------------+', text)
 
         outfile = open(output_file, mode='w', encoding='utf-8')
+        outfile.write(f"{title}\n========\n\n")
         redundant = ''
         num = 0
         for content in text_list:
