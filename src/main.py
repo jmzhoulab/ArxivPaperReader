@@ -83,14 +83,18 @@ def paper_from_email(latest_date: str):
 
 def paper_from_path(path: str, latest_date: str):
     items = []
-    files = os.listdir(path)
-    for file in files:
-        if not file.endswith('.txt'):
+    names = os.listdir(path)
+    for name in names:
+        sub_path = os.path.join(path, name)
+        if os.path.isdir(sub_path):
+            items.extend(paper_from_path(sub_path, latest_date))
             continue
-        file_date = re.findall('\d{6}', file)[0]
+        if not name.endswith('.txt'):
+            continue
+        file_date = re.findall('\d{6}', name)[0]
         if file_date <= latest_date:
             continue
-        items.append({'time': file_date, 'parts': [os.path.join(path, file)]})
+        items.append({'time': file_date, 'parts': [sub_path]})
     return items
 
 
