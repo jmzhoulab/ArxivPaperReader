@@ -105,7 +105,7 @@ if __name__=='__main__':
     parser = PaperParser()
     
     # items = paper_from_email(latest_date=latest_date)
-    items = paper_from_path(path=DATA_DIR, min_date='240329', max_date='240410')
+    items = paper_from_path(path=DATA_DIR, min_date=latest_date)
     max_date = latest_date
     for item in items:
         if len(item['parts']) == 0:

@@ -2,6 +2,7 @@ import os
 import re
 import time
 import copy
+import json
 import requests
 from lxml import etree
 from datetime import datetime
@@ -62,6 +63,7 @@ class PaperParser:
         text = ''.join(lines)
         text_list = re.split('---------------+', text)
 
+        all_out = open(input_file.replace('.txt', '.json'), mode='w', encoding='utf-8')
         outfile = open(output_file, mode='w', encoding='utf-8')
         outfile.write(f"{title}\n========\n\n")
         redundant = ''
@@ -86,6 +88,18 @@ class PaperParser:
 
                 arxiv_id = re.findall('https://arxiv.org/abs/(\d+\.\d+)', paper['url'])[0]
 
+                item = dict(
+                    date=date,
+                    arxiv_id=arxiv_id,
+                    url=paper['url'],
+                    title=title,
+                    date=paper['date'],
+                    authors=authors,
+                    abstract=abstract,
+                    history=history
+                )
+                all_out.write(json.dumps(item)+'\n')
+
                 # 只考虑包含关键词的
                 title_abstract = title.lower() + '\n' + abstract.lower()
                 if not any([kw.lower() in title_abstract for kw in self.key_words]):
@@ -94,19 +108,14 @@ class PaperParser:
                     # print("Abstract:", abstract)
                     # print("=========================================")
                     continue
-
-                out_content = TEMPLATE.format(arxiv_id=arxiv_id,
-                                        url=paper['url'],
-                                        title=title,
-                                        date=paper['date'],
-                                        authors=authors,
-                                        abstract=abstract,
-                                        history=history)
+                item.pop('date')
+                out_content = TEMPLATE.format(**item)
                 # print(out_content)
                 if not is_first:
                     outfile.write('\n' + '-'*12 + '\n\n')
                 outfile.write(out_content+'\n')
                 outfile.flush()
+                all_out.flush()
                 is_first = False
                 # print(f"num {num}, {input_file}\n{title}\n")
             else:
