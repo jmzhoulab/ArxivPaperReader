@@ -82,9 +82,10 @@ def paper_from_email(latest_date: str):
 
 
 def paper_from_path(path: str, min_date: str, max_date: str=None):
+    print('scan dir:', path)
     items = []
     max_date = max_date or '999999'
-    names = os.listdir(path)
+    names = sorted(os.listdir(path))
     for name in names:
         sub_path = os.path.join(path, name)
         if os.path.isdir(sub_path):

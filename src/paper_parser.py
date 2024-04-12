@@ -16,7 +16,7 @@ TEMPLATE = """
 
 ::
 
-    {date}
+    {submitdate}
     {authors}
 
 {abstract}
@@ -89,11 +89,11 @@ class PaperParser:
                 arxiv_id = re.findall('https://arxiv.org/abs/(\d+\.\d+)', paper['url'])[0]
 
                 item = dict(
-                    date=date,
+                    datadate=date,
                     arxiv_id=arxiv_id,
                     url=paper['url'],
                     title=title,
-                    date=paper['date'],
+                    submitdate=paper['date'],
                     authors=authors,
                     abstract=abstract,
                     history=history
@@ -108,7 +108,7 @@ class PaperParser:
                     # print("Abstract:", abstract)
                     # print("=========================================")
                     continue
-                item.pop('date')
+                item.pop('datadate')
                 out_content = TEMPLATE.format(**item)
                 # print(out_content)
                 if not is_first:
