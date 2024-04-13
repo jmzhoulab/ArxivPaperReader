@@ -584,14 +584,59 @@ The 2023 AI4EIC hackathon was the culmination of the third annual AI4EIC worksho
 
 ------------
 
+`[2311.05772] ADaPT: As-Needed Decomposition and Planning with Language Models <https://arxiv.org/abs/2311.05772>`__
+
+::
+
+    replaced with revised version Mon, 8 Apr 2024 20:42:17 GMT
+    Submission history From: Archiki Prasad [view email]
+    [v1] Wed, 8 Nov 2023 17:59:15 UTC (8,543 KB)
+    [v2] Mon, 8 Apr 2024 20:42:17 UTC (8,556 KB)
+    Archiki Prasad, Alexander Koller, Mareike Hartmann, Peter Clark, Ashish Sabharwal, Mohit Bansal, Tushar Khot
+
+Large Language Models (LLMs) are increasingly being used for interactive decision-making tasks requiring planning and adapting to the environment. Recent works employ LLMs-as-agents in broadly two ways: iteratively determining the next action (iterative executors) or generating plans and executing sub-tasks using LLMs (plan-and-execute). However, these methods struggle with task complexity, as the inability to execute any sub-task may lead to task failure. To address these shortcomings, we introduce As-Needed Decomposition and Planning for complex Tasks (ADaPT), an approach that explicitly plans and decomposes complex sub-tasks as-needed, i.e., when the LLM is unable to execute them. ADaPT recursively decomposes sub-tasks to adapt to both task complexity and LLM capability. Our results demonstrate that ADaPT substantially outperforms established strong baselines, achieving success rates up to 28.3% higher in ALFWorld, 27% in WebShop, and 33% in TextCraft -- a novel compositional dataset that we introduce. Through extensive analysis, we illustrate the importance of multilevel decomposition and establish that ADaPT dynamically adjusts to the capabilities of the executor LLM as well as to task complexity.
+
+------------
+
+`[2309.12934] TOPFORMER: Topology-Aware Authorship Attribution of Deepfake Texts with Diverse Writing Styles <https://arxiv.org/abs/2309.12934>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 11:27:48 GMT
+    Submission history From: Adaku Uchendu [view email]
+    [v1] Fri, 22 Sep 2023 15:32:49 UTC (3,308 KB)
+    [v2] Tue, 9 Apr 2024 11:27:48 UTC (2,261 KB)
+    Adaku Uchendu, Thai Le, Dongwon Lee
+
+Recent advances in Large Language Models (LLMs) have enabled the generation of open-ended high-quality texts, that are non-trivial to distinguish from human-written texts. We refer to such LLM-generated texts as deepfake texts. There are currently over 72K text generation models in the huggingface model repo. As such, users with malicious intent can easily use these open-sourced LLMs to generate harmful texts and dis/misinformation at scale. To mitigate this problem, a computational method to determine if a given text is a deepfake text or not is desired--i.e., Turing Test (TT). In particular, in this work, we investigate the more general version of the problem, known as Authorship Attribution (AA), in a multi-class setting--i.e., not only determining if a given text is a deepfake text or not but also being able to pinpoint which LLM is the author. We propose TopFormer to improve existing AA solutions by capturing more linguistic patterns in deepfake texts by including a Topological Data Analysis (TDA) layer in the Transformer-based model. We show the benefits of having a TDA layer when dealing with imbalanced, and multi-style datasets, by extracting TDA features from the reshaped $pooled\_output$ of our backbone as input. This Transformer-based model captures contextual representations (i.e., semantic and syntactic linguistic features), while TDA captures the shape and structure of data (i.e., linguistic structures). Finally, TopFormer, outperforms all baselines in all 3 datasets, achieving up to 7\% increase in Macro F1 score.
+
+------------
+
 `[2311.04902] Beyond Size: How Gradients Shape Pruning Decisions in Large Language Models <https://arxiv.org/abs/2311.04902>`__
 
 ::
 
     replaced with revised version Mon, 8 Apr 2024 22:42:49 GMT
+    Submission history From: Zhiqiang Shen [view email]
+    [v1] Wed, 8 Nov 2023 18:59:54 UTC (4,751 KB)
+    [v2] Mon, 8 Apr 2024 22:42:49 UTC (3,949 KB)
     Rocktim Jyoti Das and Mingjie Sun and Liqun Ma and Zhiqiang Shen
 
-Categories
+Large Language Models (LLMs) with billions of parameters are prime targets for network pruning, removing some model weights without hurting performance. Prior approaches such as magnitude pruning, SparseGPT, and Wanda, either concentrated solely on weights or integrated weights with activations for sparsity. However, they overlooked the informative gradients derived from pretrained LLMs. In this paper, we present a novel sparsity-centric pruning method for pretrained LLMs, termed Gradient-based Language Model Pruner (GBLM-Pruner). GBLM-Pruner leverages the first-order term of the Taylor expansion, operating in a training-free manner by harnessing properly normalized gradients from a few calibration samples to determine the pruning metric, and substantially outperforms competitive counterparts like SparseGPT and Wanda in multiple benchmarks. Intriguingly, by incorporating gradients, unstructured pruning with our method tends to reveal some structural patterns, which mirrors the geometric interdependence inherent in the LLMs' parameter structure. Additionally, GBLM-Pruner functions without any subsequent retraining or weight updates to maintain its simplicity as other counterparts. Extensive evaluations on LLaMA-1 and LLaMA-2 across various benchmarks show that GBLM-Pruner surpasses magnitude pruning, Wanda and SparseGPT by significant margins. We further extend our approach on Vision Transformer. Our code and models are available at this https URL.
+
+------------
+
+`[2311.09696] Fumbling in Babel: An Investigation into ChatGPT's Language Identification Ability <https://arxiv.org/abs/2311.09696>`__
+
+::
+
+    replaced with revised version Mon, 8 Apr 2024 20:57:40 GMT
+    Submission history From: Wei-Rui Chen [view email]
+    [v1] Thu, 16 Nov 2023 09:12:20 UTC (1,286 KB)
+    [v2] Mon, 8 Apr 2024 20:57:40 UTC (5,235 KB)
+    Wei-Rui Chen, Ife Adebara, Khai Duy Doan, Qisheng Liao, Muhammad Abdul-Mageed
+
+ChatGPT has recently emerged as a powerful NLP tool that can carry out a variety of tasks. However, the range of languages ChatGPT can handle remains largely a mystery. To uncover which languages ChatGPT `knows', we investigate its language identification (LID) abilities. For this purpose, we compile Babel-670, a benchmark comprising 670 languages representing 24 language families spoken in five continents. Languages in Babel-670 run the gamut from the very high-resource to the very low-resource. We then study ChatGPT's (both GPT-3.5 and GPT-4) ability to (i) identify language names and language codes (ii) under zero- and few-shot conditions (iii) with and without provision of a label set. When compared to smaller finetuned LID tools, we find that ChatGPT lags behind. For example, it has poor performance on African languages. We conclude that current large language models would benefit from further development before they can sufficiently serve diverse communities.
 
 ------------
 
@@ -600,9 +645,13 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 13:46:46 GMT
+    Submission history From: Sanjeev Kumar Karn [view email]
+    [v1] Tue, 28 Nov 2023 20:34:40 UTC (1,081 KB)
+    [v2] Fri, 1 Dec 2023 19:56:22 UTC (1,074 KB)
+    [v3] Tue, 9 Apr 2024 13:46:46 UTC (1,021 KB)
     Ali H. Dhanaliwala, Rikhiya Ghosh, Sanjeev Kumar Karn, Poikavila Ullaskrishnan, Oladimeji Farri, Dorin Comaniciu and Charles E. Kahn
 
-Categories
+Radiologists produce unstructured data that can be valuable for clinical care when consumed by information systems. However, variability in style limits usage. Study compares system using domain-adapted language model (RadLing) and general-purpose LLM (GPT-4) in extracting relevant features from chest radiology reports and standardizing them to common data elements (CDEs). Three radiologists annotated a retrospective dataset of 1399 chest XR reports (900 training, 499 test) and mapped to 44 pre-selected relevant CDEs. GPT-4 system was prompted with report, feature set, value set, and dynamic few-shots to extract values and map to CDEs. Output key:value pairs were compared to reference standard at both stages and an identical match was considered TP. F1 score for extraction was 97% for RadLing-based system and 78% for GPT-4 system. F1 score for mapping was 98% for RadLing and 94% for GPT-4; difference was statistically significant (P<.001). RadLing's domain-adapted embeddings were better in feature extraction and its light-weight mapper had better f1 score in CDE assignment. RadLing system also demonstrated higher capabilities in differentiating between absent (99% vs 64%) and unspecified (99% vs 89%). RadLing system's domain-adapted embeddings helped improve performance of GPT-4 system to 92% by giving more relevant few-shot prompts. RadLing system offers operational advantages including local deployment and reduced runtime costs.
 
 ------------
 
@@ -611,9 +660,26 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 07:32:37 GMT
+    Submission history From: Luca Foppiano [view email]
+    [v1] Fri, 19 Jan 2024 23:00:31 UTC (479 KB)
+    [v2] Tue, 9 Apr 2024 07:32:37 UTC (449 KB)
     Luca Foppiano, Guillaume Lambard, Toshiyuki Amagasa, Masashi Ishii
 
-Categories
+This study is dedicated to assessing the capabilities of large language models (LLMs) such as GPT-3.5-Turbo, GPT-4, and GPT-4-Turbo in extracting structured information from scientific documents in materials science. To this end, we primarily focus on two critical tasks of information extraction: (i) a named entity recognition (NER) of studied materials and physical properties and (ii) a relation extraction (RE) between these entities. Due to the evident lack of datasets within Materials Informatics (MI), we evaluated using SuperMat, based on superconductor research, and MeasEval, a generic measurement evaluation corpus. The performance of LLMs in executing these tasks is benchmarked against traditional models based on the BERT architecture and rule-based approaches (baseline). We introduce a novel methodology for the comparative analysis of intricate material expressions, emphasising the standardisation of chemical formulas to tackle the complexities inherent in materials science information assessment. For NER, LLMs fail to outperform the baseline with zero-shot prompting and exhibit only limited improvement with few-shot prompting. However, a GPT-3.5-Turbo fine-tuned with the appropriate strategy for RE outperforms all models, including the baseline. Without any fine-tuning, GPT-4 and GPT-4-Turbo display remarkable reasoning and relationship extraction capabilities after being provided with merely a couple of examples, surpassing the baseline. Overall, the results suggest that although LLMs demonstrate relevant reasoning skills in connecting concepts, specialised models are currently a better choice for tasks requiring extracting complex domain-specific entities like materials. These insights provide initial guidance applicable to other materials science sub-domains in future work.
+
+------------
+
+`[2401.16640] TeenyTinyLlama: open-source tiny language models trained in Brazilian Portuguese <https://arxiv.org/abs/2401.16640>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 14:35:02 GMT
+    Submission history From: Nicholas Kluge Corrêa [view email]
+    [v1] Tue, 30 Jan 2024 00:25:54 UTC (2,405 KB)
+    [v2] Tue, 9 Apr 2024 14:35:02 UTC (2,408 KB)
+    Nicholas Kluge Corr\^ea, Sophia Falk, Shiza Fatimah, Aniket Sen, Nythamar de Oliveira
+
+Large language models (LLMs) have significantly advanced natural language processing, but their progress has yet to be equal across languages. While most LLMs are trained in high-resource languages like English, multilingual models generally underperform monolingual ones. Additionally, aspects of their multilingual foundation sometimes restrict the byproducts they produce, like computational demands and licensing regimes. In this study, we document the development of open-foundation models tailored for use in low-resource settings, their limitations, and their benefits. This is the TeenyTinyLlama pair: two compact models for Brazilian Portuguese text generation. We release them under the permissive Apache 2.0 license on GitHub and Hugging Face for community use and further development. See this https URL
 
 ------------
 
@@ -622,9 +688,12 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 07:39:47 GMT
+    Submission history From: Xinbang Dai [view email]
+    [v1] Sun, 18 Feb 2024 10:44:03 UTC (416 KB)
+    [v2] Tue, 9 Apr 2024 07:39:47 UTC (811 KB)
     Xinbang Dai, Yuncheng Hua, Tongtong Wu, Yang Sheng, Qiu Ji, Guilin Qi
 
-Categories
+Although the method of enhancing large language models' (LLMs') reasoning ability and reducing their hallucinations through the use of knowledge graphs (KGs) has received widespread attention, the exploration of how to enable LLMs to integrate the structured knowledge in KGs on-the-fly remains inadequate. Researchers often co-train KG embeddings and LLM parameters to equip LLMs with the ability of comprehending KG knowledge. However, this resource-hungry training paradigm significantly increases the model learning cost and is also unsuitable for non-open-source, black-box LLMs. In this paper, we employ complex question answering (CQA) as a task to assess the LLM's ability of comprehending KG knowledge. We conducted a comprehensive comparison of KG knowledge injection methods (from triples to natural language text), aiming to explore the optimal prompting method for supplying KG knowledge to LLMs, thereby enhancing their comprehension of KG. Contrary to our initial expectations, our analysis revealed that LLMs effectively handle messy, noisy, and linearized KG knowledge, outperforming methods that employ well-designed natural language (NL) textual prompts. This counter-intuitive finding provides substantial insights for future research on LLMs' comprehension of structured knowledge.
 
 ------------
 
@@ -633,9 +702,26 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 09:00:57 GMT
+    Submission history From: Dehai Min [view email]
+    [v1] Tue, 20 Feb 2024 10:00:58 UTC (1,903 KB)
+    [v2] Tue, 9 Apr 2024 09:00:57 UTC (1,905 KB)
     Dehai Min, Nan Hu, Rihui Jin, Nuo Lin, Jiaoyan Chen, Yongrui Chen, Yu Li, Guilin Qi, Yun Li, Nijun Li, Qianren Wang
 
-Categories
+Augmenting Large Language Models (LLMs) for Question Answering (QA) with domain specific data has attracted wide attention. However, domain data often exists in a hybrid format, including text and semi-structured tables, posing challenges for the seamless integration of information. Table-to-Text Generation is a promising solution by facilitating the transformation of hybrid data into a uniformly text-formatted corpus. Although this technique has been widely studied by the NLP community, there is currently no comparative analysis on how corpora generated by different table-to-text methods affect the performance of QA systems. In this paper, we address this research gap in two steps. First, we innovatively integrate table-to-text generation into the framework of enhancing LLM-based QA systems with domain hybrid data. Then, we utilize this framework in real-world industrial data to conduct extensive experiments on two types of QA systems (DSFT and RAG frameworks) with four representative methods: Markdown format, Template serialization, TPLM-based method, and LLM-based method. Based on the experimental results, we draw some empirical findings and explore the underlying reasons behind the success of some methods. We hope the findings of this work will provide a valuable reference for the academic and industrial communities in developing robust QA systems.
+
+------------
+
+`[2402.15873] SemEval-2024 Task 8: Weighted Layer Averaging RoBERTa for Black-Box Machine-Generated Text Detection <https://arxiv.org/abs/2402.15873>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 10:19:48 GMT
+    Submission history From: Ayan Datta [view email]
+    [v1] Sat, 24 Feb 2024 17:44:56 UTC (16 KB)
+    [v2] Tue, 9 Apr 2024 10:19:48 UTC (17 KB)
+    Ayan Datta, Aryan Chandramania, Radhika Mamidi
+
+This document contains the details of the authors' submission to the proceedings of SemEval 2024's Task 8: Multigenerator, Multidomain, and Multilingual Black-Box Machine-Generated Text Detection Subtask A (monolingual) and B. Detection of machine-generated text is becoming an increasingly important task, with the advent of large language models (LLMs). In this paper, we lay out how using weighted averages of RoBERTa layers lets us capture information about text that is relevant to machine-generated text detection.
 
 ------------
 
@@ -644,9 +730,27 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 16:38:01 GMT
+    Submission history From: Zhi Jing [view email]
+    [v1] Sun, 10 Mar 2024 06:30:54 UTC (1,830 KB)
+    [v2] Tue, 9 Apr 2024 16:38:01 UTC (1,832 KB)
     Kaipeng Wang, Zhi Jing, Yongye Su, Yikun Han
 
-Categories
+This paper delves into enhancing the classification performance on the GoEmotions dataset, a large, manually annotated dataset for emotion detection in text. The primary goal of this paper is to address the challenges of detecting subtle emotions in text, a complex issue in Natural Language Processing (NLP) with significant practical applications. The findings offer valuable insights into addressing the challenges of emotion detection in text and suggest directions for future research, including the potential for a survey paper that synthesizes methods and performances across various datasets in this domain.
+
+------------
+
+`[2403.16432] $\textit{LinkPrompt}$: Natural and Universal Adversarial Attacks on Prompt-based Language Models <https://arxiv.org/abs/2403.16432>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 13:05:49 GMT
+    Submission history From: Yue Xu [view email]
+    [v1] Mon, 25 Mar 2024 05:27:35 UTC (7,539 KB)
+    [v2] Wed, 27 Mar 2024 11:37:58 UTC (7,544 KB)
+    [v3] Tue, 9 Apr 2024 13:05:49 UTC (7,544 KB)
+    Yue Xu, Wenjie Wang
+
+Prompt-based learning is a new language model training paradigm that adapts the Pre-trained Language Models (PLMs) to downstream tasks, which revitalizes the performance benchmarks across various natural language processing (NLP) tasks. Instead of using a fixed prompt template to fine-tune the model, some research demonstrates the effectiveness of searching for the prompt via optimization. Such prompt optimization process of prompt-based learning on PLMs also gives insight into generating adversarial prompts to mislead the model, raising concerns about the adversarial vulnerability of this paradigm. Recent studies have shown that universal adversarial triggers (UATs) can be generated to alter not only the predictions of the target PLMs but also the prediction of corresponding Prompt-based Fine-tuning Models (PFMs) under the prompt-based learning paradigm. However, UATs found in previous works are often unreadable tokens or characters and can be easily distinguished from natural texts with adaptive defenses. In this work, we consider the naturalness of the UATs and develop $\textit{LinkPrompt}$, an adversarial attack algorithm to generate UATs by a gradient-based beam search algorithm that not only effectively attacks the target PLMs and PFMs but also maintains the naturalness among the trigger tokens. Extensive results demonstrate the effectiveness of $\textit{LinkPrompt}$, as well as the transferability of UATs generated by $\textit{LinkPrompt}$ to open-sourced Large Language Model (LLM) Llama2 and API-accessed LLM GPT-3.5-turbo. The resource is available at $\href{this https URL}{this https URL}$.
 
 ------------
 
@@ -655,9 +759,12 @@ Categories
 ::
 
     replaced with revised version Mon, 8 Apr 2024 19:55:37 GMT
+    Submission history From: Yanshen Sun [view email]
+    [v1] Wed, 27 Mar 2024 04:39:18 UTC (4,899 KB)
+    [v2] Mon, 8 Apr 2024 19:55:37 UTC (5,468 KB)
     Yanshen Sun, Jianfeng He, Limeng Cui, Shuo Lei, Chang-Tien Lu
 
-Categories
+Recent advancements in Large Language Models (LLMs) have enabled the creation of fake news, particularly in complex fields like healthcare. Studies highlight the gap in the deceptive power of LLM-generated fake news with and without human assistance, yet the potential of prompting techniques has not been fully explored. Thus, this work aims to determine whether prompting strategies can effectively narrow this gap. Current LLM-based fake news attacks require human intervention for information gathering and often miss details and fail to maintain context consistency. Therefore, to better understand threat tactics, we propose a strong fake news attack method called conditional Variational-autoencoder-Like Prompt (VLPrompt). Unlike current methods, VLPrompt eliminates the need for additional data collection while maintaining contextual coherence and preserving the intricacies of the original text. To propel future research on detecting VLPrompt attacks, we created a new dataset named VLPrompt fake news (VLPFN) containing real and fake texts. Our experiments, including various detection methods and novel human study metrics, were conducted to assess their performance on our dataset, yielding numerous findings.
 
 ------------
 
@@ -666,9 +773,44 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 10:48:19 GMT
+    Submission history From: Zheng Tianyu [view email]
+    [v1] Fri, 5 Apr 2024 15:20:02 UTC (2,398 KB)
+    [v2] Mon, 8 Apr 2024 16:33:57 UTC (2,385 KB)
+    [v3] Tue, 9 Apr 2024 10:48:19 UTC (2,385 KB)
     Xinrun Du, Zhouliang Yu, Songyang Gao, Ding Pan, Yuyang Cheng, Ziyang Ma, Ruibin Yuan, Xingwei Qu, Jiaheng Liu, Tianyu Zheng, Xinchen Luo, Guorui Zhou, Binhang Yuan, Wenhu Chen, Jie Fu, and Ge Zhang
 
-Categories
+In this study, we introduce CT-LLM, a 2B large language model (LLM) that illustrates a pivotal shift towards prioritizing the Chinese language in developing LLMs. Uniquely initiated from scratch, CT-LLM diverges from the conventional methodology by primarily incorporating Chinese textual data, utilizing an extensive corpus of 1,200 billion tokens, including 800 billion Chinese tokens, 300 billion English tokens, and 100 billion code tokens. This strategic composition facilitates the model's exceptional proficiency in understanding and processing Chinese, a capability further enhanced through alignment techniques. Demonstrating remarkable performance on the CHC-Bench, CT-LLM excels in Chinese language tasks, and showcases its adeptness in English through SFT. This research challenges the prevailing paradigm of training LLMs predominantly on English corpora and then adapting them to other languages, broadening the horizons for LLM training methodologies. By open-sourcing the full process of training a Chinese LLM, including a detailed data processing procedure with the obtained Massive Appropriate Pretraining Chinese Corpus (MAP-CC), a well-chosen multidisciplinary Chinese Hard Case Benchmark (CHC-Bench), and the 2B-size Chinese Tiny LLM (CT-LLM), we aim to foster further exploration and innovation in both academia and industry, paving the way for more inclusive and versatile language models.
+
+------------
+
+`[2404.05632] Fighting crime with Transformers: Empirical analysis of address parsing methods in payment data <https://arxiv.org/abs/2404.05632>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 09:30:46 GMT
+    Submission history From: Bojan Petrovski [view email]
+    [v1] Mon, 8 Apr 2024 16:04:26 UTC (7,744 KB)
+    [v2] Tue, 9 Apr 2024 09:30:46 UTC (7,743 KB)
+    Haitham Hammami, Louis Baligand, Bojan Petrovski
+
+In the financial industry, identifying the location of parties involved in payments is a major challenge in the context of various regulatory requirements. For this purpose address parsing entails extracting fields such as street, postal code, or country from free text message attributes. While payment processing platforms are updating their standards with more structured formats such as SWIFT with ISO 20022, address parsing remains essential for a considerable volume of messages. With the emergence of Transformers and Generative Large Language Models (LLM), we explore the performance of state-of-the-art solutions given the constraint of processing a vast amount of daily data. This paper also aims to show the need for training robust models capable of dealing with real-world noisy transactional data. Our results suggest that a well fine-tuned Transformer model using early-stopping significantly outperforms other approaches. Nevertheless, generative LLMs demonstrate strong zero-shot performance and warrant further investigations.
+
+------------
+
+`[2401.03955] Tiny Time Mixers (TTMs): Fast Pre-trained Models for Enhanced Zero/Few-Shot Forecasting of Multivariate Time Series <https://arxiv.org/abs/2401.03955>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 07:19:41 GMT
+    Submission history From: Vijay Ekambaram [view email]
+    [v1] Mon, 8 Jan 2024 15:21:21 UTC (2,236 KB)
+    [v2] Thu, 11 Jan 2024 18:21:27 UTC (2,241 KB)
+    [v3] Wed, 17 Jan 2024 16:27:24 UTC (2,249 KB)
+    [v4] Sat, 6 Apr 2024 17:16:18 UTC (2,250 KB)
+    [v5] Tue, 9 Apr 2024 07:19:41 UTC (2,250 KB)
+    Vijay Ekambaram, Arindam Jati, Nam H. Nguyen, Pankaj Dayama, Chandra Reddy, Wesley M. Gifford, Jayant Kalagnanam
+
+Large pre-trained models for zero/few-shot learning excel in language and vision domains but encounter challenges in multivariate time series (TS) due to the diverse nature and scarcity of publicly available pre-training data. Consequently, there has been a recent surge in utilizing pre-trained large language models (LLMs) with token adaptations for TS forecasting. These approaches employ cross-domain transfer learning and surprisingly yield impressive results. However, these models are typically very slow and large (~billion parameters) and do not consider cross-channel correlations. To address this, we present Tiny Time Mixers (TTM), a significantly small model based on the lightweight TSMixer architecture. TTM marks the first success in developing fast and tiny general pre-trained models (<1M parameters), exclusively trained on public TS datasets, with effective transfer learning capabilities for forecasting. To tackle the complexity of pre-training on multiple datasets with varied temporal resolutions, we introduce several novel enhancements such as adaptive patching, dataset augmentation via downsampling, and resolution prefix tuning. Moreover, we employ a multi-level modeling strategy to effectively model channel correlations and infuse exogenous signals during fine-tuning, a crucial capability lacking in existing benchmarks. TTM shows significant accuracy gains (12-38\%) over popular benchmarks in few/zero-shot forecasting. It also drastically reduces the compute needs as compared to LLM-TS methods, with a 14X cut in learnable parameters, 106X less total parameters, and substantial reductions in fine-tuning (65X) and inference time (54X). In fact, TTM's zero-shot often surpasses the few-shot results in many popular benchmarks, highlighting the efficacy of our approach. Models and source code are available at this https URL
 
 ------------
 
@@ -677,9 +819,40 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 14:59:10 GMT
+    Submission history From: Amit Dhurandhar [view email]
+    [v1] Wed, 28 Feb 2024 22:21:47 UTC (8,124 KB)
+    [v2] Tue, 9 Apr 2024 14:59:10 UTC (8,124 KB)
     Amit Dhurandhar, Tejaswini Pedapati, Ronny Luss, Soham Dan, Aurelie Lozano, Payel Das and Georgios Kollias
 
-Categories
+Transformer-based Language Models have become ubiquitous in Natural Language Processing (NLP) due to their impressive performance on various tasks. However, expensive training as well as inference remains a significant impediment to their widespread applicability. While enforcing sparsity at various levels of the model architecture has found promise in addressing scaling and efficiency issues, there remains a disconnect between how sparsity affects network topology. Inspired by brain neuronal networks, we explore sparsity approaches through the lens of network topology. Specifically, we exploit mechanisms seen in biological networks, such as preferential attachment and redundant synapse pruning, and show that principled, model-agnostic sparsity approaches are performant and efficient across diverse NLP tasks, spanning both classification (such as natural language inference) and generation (summarization, machine translation), despite our sole objective not being optimizing performance. NeuroPrune is competitive with (or sometimes superior to) baselines on performance and can be up to $10$x faster in terms of training time for a given level of sparsity, simultaneously exhibiting measurable improvements in inference time in many cases.
+
+------------
+
+`[2311.03366] Neural Code Generation Enhancement via Functional Overlap Reranking <https://arxiv.org/abs/2311.03366>`__
+
+::
+
+    replaced with revised version Mon, 8 Apr 2024 21:54:14 GMT
+    Submission history From: Nghi D. Q. Bui [view email]
+    [v1] Mon, 16 Oct 2023 22:20:31 UTC (1,144 KB)
+    [v2] Mon, 8 Apr 2024 21:54:14 UTC (705 KB)
+    Hung Quoc To, Minh Huynh Nguyen, Nghi D. Q. Bui
+
+Code Large Language Models (CodeLLMs) have marked a new era in code generation advancements. However, selecting the best solutions from all possible CodeLLM solutions remains a challenge. Previous methods frequently overlooked the intricate functional similarities and interactions between clusters, resulting in suboptimal results. In this work, we introduce \textit{SRank}, a novel reranking strategy for selecting the best solution from code generation that focuses on modeling the relationship between clusters of solutions. By quantifying the functional overlap between clusters, our approach provides a better ranking strategy of code solutions. Empirical results show that our method achieves remarkable results on pass@1 score. For instance, on the Human-Eval benchmark, we achieve 69.66\% in pass@1 with Codex002, 75.31\% for WizardCoder, 53.99\% for StarCoder and 60.55\% for CodeGen, which surpass the state-of-the-arts solution ranking methods, such as CodeT and Coder-Reviewer on the same CodeLLM with significant margin ($\approx 6.1\%$ improvement on average). Even in scenarios with a limited number of sampled solutions and test cases, our approach demonstrates robustness and superiority, marking a new benchmark in code generation reranking.
+
+------------
+
+`[2402.03130] Evaluation of ChatGPT Usability as A Code Generation Tool <https://arxiv.org/abs/2402.03130>`__
+
+::
+
+    replaced with revised version Tue, 9 Apr 2024 12:37:56 GMT
+    Submission history From: Hong Zhu [view email]
+    [v1] Mon, 5 Feb 2024 15:56:19 UTC (557 KB)
+    [v2] Tue, 9 Apr 2024 12:37:56 UTC (4,614 KB)
+    Tanha Miah and Hong Zhu
+
+With the rapid advance of machine learning (ML) technology, large language models (LLMs) are increasingly explored as an intelligent tool to generate program code from natural language specifications. However, existing evaluations of LLMs have focused on their capabilities in comparison with humans. It is desirable to evaluate their usability when deciding on whether to use a LLM in software production. This paper proposes a user centric method. It includes metadata in the test cases of a benchmark to describe their usages, conducts testing in a multi-attempt process that mimic the uses of LLMs, measures LLM generated solutions on a set of quality attributes that reflect usability, and evaluates the performance based on user experiences in the uses of LLMs as a tool. The paper reports an application of the method in the evaluation of ChatGPT usability as a code generation tool for the R programming language. Our experiments demonstrated that ChatGPT is highly useful for generating R program code although it may fail on hard programming tasks. The user experiences are good with overall average number of attempts being 1.61 and the average time of completion being 47.02 seconds. Our experiments also found that the weakest aspect of usability is conciseness, which has a score of 3.80 out of 5. Our experiment also shows that it is hard for human developers to learn from experiences to improve the skill of using ChatGPT to generate code.
 
 ------------
 
@@ -688,9 +861,12 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 08:08:52 GMT
+    Submission history From: Erblin Isaku [view email]
+    [v1] Fri, 16 Feb 2024 10:56:15 UTC (8,250 KB)
+    [v2] Tue, 9 Apr 2024 08:08:52 UTC (8,250 KB)
     Erblin Isaku, Christoph Laaber, Hassan Sartaj, Shaukat Ali, Thomas Schwitalla, Jan F. Nyg{\aa}rd
 
-Categories
+The Cancer Registry of Norway (CRN) uses an automated cancer registration support system (CaReSS) to support core cancer registry activities, i.e, data capture, data curation, and producing data products and statistics for various stakeholders. GURI is a core component of CaReSS, which is responsible for validating incoming data with medical rules. Such medical rules are manually implemented by medical experts based on medical standards, regulations, and research. Since large language models (LLMs) have been trained on a large amount of public information, including these documents, they can be employed to generate tests for GURI. Thus, we propose an LLM-based test generation and differential testing approach (LLMeDiff) to test GURI. We experimented with four different LLMs, two medical rule engine implementations, and 58 real medical rules to investigate the hallucination, success, time efficiency, and robustness of the LLMs to generate tests, and these tests' ability to find potential issues in GURI. Our results showed that GPT-3.5 hallucinates the least, is the most successful, and is generally the most robust; however, it has the worst time efficiency. Our differential testing revealed 22 medical rules where implementation inconsistencies were discovered (e.g., regarding handling rule versions). Finally, we provide insights for practitioners and researchers based on the results.
 
 ------------
 
@@ -699,6 +875,9 @@ Categories
 ::
 
     replaced with revised version Tue, 9 Apr 2024 11:29:47 GMT
+    Submission history From: Jiaye Wang [view email]
+    [v1] Mon, 8 Apr 2024 13:22:24 UTC (1,828 KB)
+    [v2] Tue, 9 Apr 2024 11:29:47 UTC (1,723 KB)
     Jiaye Wang
 
-Categories
+We propose a method to guide Large Language Models (LLMs) in generating structured content adhering to specific conventions without fine-tuning. By utilizing coroutine-based content generation constraints through a pre-agreed context-free grammar (CFG), LLMs are directed during decoding to produce formal language compliant outputs. This enhances stability and consistency in generating target data structures, types, or instructions, reducing application development complexities. Experimentally, error rates of GPT-2 and Gemma exceed 95% for DSLs longer than 36 and 282 tokens, respectively. We introduce YieldLang, a coroutine-based DSL generation framework, and evaluate it with LLMs on various tasks including JSON and Mermaid flowchart generation. Compared to benchmarks, our approach improves accuracy by 1.09 to 11.6 times, with LLMs requiring only about 16.5% of the samples to generate JSON effectively. This enhances usability of LLM-generated content for computer programs.

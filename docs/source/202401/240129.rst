@@ -331,14 +331,47 @@ Most research in this area has predominantly concentrated on the generative aspe
 
 ------------
 
+`[2311.11211] Leveraging Generative AI for Clinical Evidence Summarization Needs to Ensure Trustworthiness <https://arxiv.org/abs/2311.11211>`__
+
+::
+
+    replaced with revised version Fri, 26 Jan 2024 12:20:34 GMT
+    Submission history From: Gongbo Zhang [view email]
+    [v1] Sun, 19 Nov 2023 03:29:45 UTC (80 KB)
+    [v2] Fri, 26 Jan 2024 12:20:34 UTC (413 KB)
+    [v3] Mon, 1 Apr 2024 02:04:25 UTC (240 KB)
+    Gongbo Zhang, Qiao Jin, Denis Jered McInerney, Yong Chen, Fei Wang, Curtis L. Cole, Qian Yang, Yanshan Wang, Bradley A. Malin, Mor Peleg, Byron C. Wallace, Zhiyong Lu, Chunhua Weng, Yifan Peng
+
+Evidence-based medicine promises to improve the quality of healthcare by empowering medical decisions and practices with the best available evidence. The rapid growth of medical evidence, which can be obtained from various sources, poses a challenge in collecting, appraising, and synthesizing the evidential information. Recent advancements in generative AI, exemplified by large language models, hold promise in facilitating the arduous task. However, developing accountable, fair, and inclusive models remains a complicated undertaking. In this perspective, we discuss the trustworthiness of generative AI in the context of automated summarization of medical evidence.
+
+------------
+
+`[2304.14827] ChatGPT Evaluation on Sentence Level Relations: A Focus on Temporal, Causal, and Discourse Relations <https://arxiv.org/abs/2304.14827>`__
+
+::
+
+    replaced with revised version Fri, 26 Jan 2024 10:33:08 GMT
+    Submission history From: Chunkit Chan [view email]
+    [v1] Fri, 28 Apr 2023 13:14:36 UTC (14,441 KB)
+    [v2] Thu, 11 May 2023 18:20:00 UTC (7,561 KB)
+    [v3] Fri, 26 Jan 2024 10:33:08 UTC (7,567 KB)
+    Chunkit Chan, Jiayang Cheng, Weiqi Wang, Yuxin Jiang, Tianqing Fang, Xin Liu, Yangqiu Song
+
+This paper aims to quantitatively evaluate the performance of ChatGPT, an interactive large language model, on inter-sentential relations such as temporal relations, causal relations, and discourse relations. Given ChatGPT's promising performance across various tasks, we proceed to carry out thorough evaluations on the whole test sets of 11 datasets, including temporal and causal relations, PDTB2.0-based, and dialogue-based discourse relations. To ensure the reliability of our findings, we employ three tailored prompt templates for each task, including the zero-shot prompt template, zero-shot prompt engineering (PE) template, and in-context learning (ICL) prompt template, to establish the initial baseline scores for all popular sentence-pair relation classification tasks for the first time. Through our study, we discover that ChatGPT exhibits exceptional proficiency in detecting and reasoning about causal relations, albeit it may not possess the same level of expertise in identifying the temporal order between two events. While it is capable of identifying the majority of discourse relations with existing explicit discourse connectives, the implicit discourse relation remains a formidable challenge. Concurrently, ChatGPT demonstrates subpar performance in the dialogue discourse parsing task that requires structural understanding in a dialogue before being aware of the discourse relation.
+
+------------
+
 `[2307.07164] Learning to Retrieve In-Context Examples for Large Language Models <https://arxiv.org/abs/2307.07164>`__
 
 ::
 
     replaced with revised version Fri, 26 Jan 2024 07:04:02 GMT
+    Submission history From: Liang Wang [view email]
+    [v1] Fri, 14 Jul 2023 05:23:08 UTC (179 KB)
+    [v2] Fri, 26 Jan 2024 07:04:02 UTC (195 KB)
     Liang Wang, Nan Yang, Furu Wei
 
-Categories
+Large language models (LLMs) have demonstrated their ability to learn in-context, allowing them to perform various tasks based on a few input-output examples. However, the effectiveness of in-context learning is heavily reliant on the quality of the selected examples. In this paper, we propose a novel framework to iteratively train dense retrievers that can identify high-quality in-context examples for LLMs. Our framework initially trains a reward model based on LLM feedback to evaluate the quality of candidate examples, followed by knowledge distillation to train a bi-encoder based dense retriever. Our experiments on a suite of $30$ tasks demonstrate that our framework significantly enhances in-context learning performance. Furthermore, we show the generalization ability of our framework to unseen tasks during training. An in-depth analysis reveals that our model improves performance by retrieving examples with similar patterns, and the gains are consistent across LLMs of varying sizes. The code and data are available at this https URL .
 
 ------------
 
@@ -347,9 +380,13 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 12:49:04 GMT
+    Submission history From: Zhenyu Li [view email]
+    [v1] Wed, 23 Aug 2023 11:00:36 UTC (1,642 KB)
+    [v2] Sat, 9 Dec 2023 10:23:55 UTC (1,642 KB)
+    [v3] Fri, 26 Jan 2024 12:49:04 UTC (1,642 KB)
     Zhenyu Li, Sunqi Fan, Yu Gu, Xiuxing Li, Zhichao Duan, Bowen Dong, Ning Liu, Jianyong Wang
 
-Categories
+Knowledge base question answering (KBQA) is a critical yet challenging task due to the vast number of entities within knowledge bases and the diversity of natural language questions posed by users. Unfortunately, the performance of most KBQA models tends to decline significantly in real-world scenarios where high-quality annotated data is insufficient. To mitigate the burden associated with manual annotation, we introduce FlexKBQA by utilizing Large Language Models (LLMs) as program translators for addressing the challenges inherent in the few-shot KBQA task. Specifically, FlexKBQA leverages automated algorithms to sample diverse programs, such as SPARQL queries, from the knowledge base, which are subsequently converted into natural language questions via LLMs. This synthetic dataset facilitates training a specialized lightweight model for the KB. Additionally, to reduce the barriers of distribution shift between synthetic data and real user questions, FlexKBQA introduces an executionguided self-training method to iterative leverage unlabeled user questions. Furthermore, we explore harnessing the inherent reasoning capability of LLMs to enhance the entire framework. Consequently, FlexKBQA delivers substantial flexibility, encompassing data annotation, deployment, and being domain agnostic. Through extensive experiments on GrailQA, WebQSP, and KQA Pro, we observe that under the few-shot even the more challenging zero-shot scenarios, FlexKBQA achieves impressive results with a few annotations, surpassing all previous baselines and even approaching the performance of supervised models, achieving a remarkable 93% performance relative to the fully-supervised models. We posit that FlexKBQA represents a significant advancement towards exploring better integration of large and lightweight models. The code is open-sourced.
 
 ------------
 
@@ -358,9 +395,12 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 09:07:59 GMT
+    Submission history From: Alexander Brinkmann [view email]
+    [v1] Thu, 19 Oct 2023 07:39:00 UTC (4,439 KB)
+    [v2] Fri, 26 Jan 2024 09:07:59 UTC (4,139 KB)
     Alexander Brinkmann, Roee Shraga, Christian Bizer
 
-Categories
+E-commerce platforms rely on structured product descriptions, in the form of attribute/value pairs to enable features such as faceted product search and product comparison. However, vendors on these platforms often provide unstructured product descriptions consisting of a title and a textual description. To process such offers, e-commerce platforms must extract attribute/value pairs from the unstructured descriptions. State-of-the-art attribute/value extraction methods based on pre-trained language models (PLMs), such as BERT, face two drawbacks (i) the methods require significant amounts of task-specific training data and (ii) the fine-tuned models have problems to generalize to attribute values that were not part of the training data. We explore the potential of using large language models (LLMs) as a more training data-efficient and more robust alternative to existing attribute/value extraction methods. We propose different prompt templates for instructing LLMs about the target schema of the extraction, covering both zero-shot and few-shot scenarios. In the zero-shot scenario, textual and JSON-based approaches for representing information about the target attributes are compared. In the scenario with training data, we investigate (i) the provision of example attribute values, (ii) the selection of in-context demonstrations, (iii) shuffled ensembling to prevent position bias, and (iv) fine-tuning the LLM. The prompt templates are evaluated in combination with hosted LLMs, such as GPT-3.5 and GPT-4, and open-source LLMs based on Llama2 which can be run locally. The best average F1-score of 86% was reached by GPT-4 using an ensemble of shuffled prompts that combine attribute names, attribute descriptions, example values, and demonstrations. Given the same amount of training data, this prompt/model combination outperforms the best PLM baseline by an average of 6% F1.
 
 ------------
 
@@ -369,9 +409,42 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 10:02:57 GMT
+    Submission history From: Hailin Chen [view email]
+    [v1] Sat, 28 Oct 2023 07:54:39 UTC (1,703 KB)
+    [v2] Fri, 26 Jan 2024 10:02:57 UTC (1,703 KB)
     Hailin Chen, Amrita Saha, Steven Hoi, Shafiq Joty
 
-Categories
+With the rise of powerful closed-sourced LLMs (ChatGPT, GPT-4), there are increasing interests in distilling the capabilies of close-sourced LLMs to smaller open-sourced LLMs. Previous distillation methods usually prompt ChatGPT to generate a set of instructions and answers, for the student model to learn. However, such standard distillation approach neglects the merits and conditions of the student model. Inspired by modern teaching principles, we design a personalised distillation process, in which the student attempts to solve a task first, then the teacher provides an adaptive refinement for the student to improve. Instead of feeding the student with teacher's prior, personalised distillation enables personalised learning for the student model, as it only learns on examples it makes mistakes upon and learns to improve its own solution. On code generation, personalised distillation consistently outperforms standard distillation with only one third of the data. With only 2.5-3K personalised examples that incur a data-collection cost of 4-6$, we boost CodeGen-mono-16B by 7% to achieve 36.4% pass@1 and StarCoder by 12.2% to achieve 45.8% pass@1 on HumanEval.
+
+------------
+
+`[2312.01339] ArabIcros: AI-Powered Arabic Crossword Puzzle Generation for Educational Applications <https://arxiv.org/abs/2312.01339>`__
+
+::
+
+    replaced with revised version Fri, 26 Jan 2024 18:11:43 GMT
+    Submission history From: Kamyar Zeinalipour [view email]
+    [v1] Sun, 3 Dec 2023 10:03:50 UTC (14,662 KB)
+    [v2] Mon, 11 Dec 2023 16:33:03 UTC (4,525 KB)
+    [v3] Mon, 25 Dec 2023 18:35:01 UTC (4,525 KB)
+    [v4] Fri, 26 Jan 2024 18:11:43 UTC (4,524 KB)
+    Kamyar Zeinalipour, Mohamed Zaky Saad, Marco Maggini, Marco Gori
+
+This paper presents the first Arabic crossword puzzle generator driven by advanced AI technology. Leveraging cutting-edge large language models including GPT4, GPT3-Davinci, GPT3-Curie, GPT3-Babbage, GPT3-Ada, and BERT, the system generates distinctive and challenging clues. Based on a dataset comprising over 50,000 clue-answer pairs, the generator employs fine-tuning, few/zero-shot learning strategies, and rigorous quality-checking protocols to enforce the generation of high-quality clue-answer pairs. Importantly, educational crosswords contribute to enhancing memory, expanding vocabulary, and promoting problem-solving skills, thereby augmenting the learning experience through a fun and engaging approach, reshaping the landscape of traditional learning methods. The overall system can be exploited as a powerful educational tool that amalgamates AI and innovative learning techniques, heralding a transformative era for Arabic crossword puzzles and the intersection of technology and education.
+
+------------
+
+`[2401.14011] CMMU: A Benchmark for Chinese Multi-modal Multi-type Question Understanding and Reasoning <https://arxiv.org/abs/2401.14011>`__
+
+::
+
+    replaced with revised version Fri, 26 Jan 2024 09:46:03 GMT
+    Submission history From: Xinya Wu [view email]
+    [v1] Thu, 25 Jan 2024 08:22:10 UTC (4,923 KB)
+    [v2] Fri, 26 Jan 2024 09:46:03 UTC (9,098 KB)
+    Zheqi He, Xinya Wu, Pengfei Zhou, Richeng Xuan, Guang Liu, Xi Yang, Qiannan Zhu, Hua Huang
+
+Multi-modal large language models(MLLMs) have achieved remarkable progress and demonstrated powerful knowledge comprehension and reasoning abilities. However, the mastery of domain-specific knowledge, which is essential for evaluating the intelligence of MLLMs, continues to be a challenge. Current multi-modal benchmarks for domain-specific knowledge concentrate on multiple-choice questions and are predominantly available in English, which imposes limitations on the comprehensiveness of the evaluation. To this end, we introduce CMMU, a novel benchmark for multi-modal and multi-type question understanding and reasoning in Chinese. CMMU consists of 3,603 questions in 7 subjects, covering knowledge from primary to high school. The questions can be categorized into 3 types: multiple-choice, multiple-response, and fill-in-the-blank, bringing greater challenges to MLLMs. In addition, we propose a rigorous evaluation strategy called ShiftCheck for assessing multiple-choice questions. The strategy aims to reduce position bias, minimize the influence of randomness on correctness, and perform a quantitative analysis of position bias. We evaluate seven open-source MLLMs along with GPT4-V, Gemini-Pro, and Qwen-VL-Plus. The results demonstrate that CMMU poses a significant challenge to the recent MLLMs.
 
 ------------
 
@@ -380,9 +453,13 @@ Categories
 ::
 
     replaced with revised version Thu, 25 Jan 2024 20:04:50 GMT
+    Submission history From: Evan King [view email]
+    [v1] Tue, 16 May 2023 20:52:04 UTC (2,419 KB)
+    [v2] Thu, 16 Nov 2023 19:27:58 UTC (2,331 KB)
+    [v3] Thu, 25 Jan 2024 20:04:50 UTC (2,032 KB)
     Evan King, Haoxiang Yu, Sangsu Lee, Christine Julien
 
-Categories
+Smart home assistants function best when user commands are direct and well-specified (e.g., "turn on the kitchen light"), or when a hard-coded routine specifies the response. In more natural communication, however, human speech is unconstrained, often describing goals (e.g., "make it cozy in here" or "help me save energy") rather than indicating specific target devices and actions to take on those devices. Current systems fail to understand these under-specified commands since they cannot reason about devices and settings as they relate to human situations. We introduce large language models (LLMs) to this problem space, exploring their use for controlling devices and creating automation routines in response to under-specified user commands in smart homes. We empirically study the baseline quality and failure modes of LLM-created action plans with a survey of age-diverse users. We find that LLMs can reason creatively to achieve challenging goals, but they experience patterns of failure that diminish their usefulness. We address these gaps with Sasha, a smarter smart home assistant. Sasha responds to loosely-constrained commands like "make it cozy" or "help me sleep better" by executing plans to achieve user goals, e.g., setting a mood with available devices, or devising automation routines. We implement and evaluate Sasha in a hands-on user study, showing the capabilities and limitations of LLM-driven smart homes when faced with unconstrained user-generated scenarios.
 
 ------------
 
@@ -391,9 +468,14 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 16:02:13 GMT
+    Submission history From: Young-Ho Kim [view email]
+    [v1] Thu, 21 Sep 2023 16:43:17 UTC (8,518 KB)
+    [v2] Sun, 21 Jan 2024 16:30:35 UTC (8,527 KB)
+    [v3] Fri, 26 Jan 2024 16:02:13 UTC (8,527 KB)
+    [v4] Mon, 19 Feb 2024 03:22:07 UTC (8,573 KB)
     Woosuk Seo, Chanmo Yang, Young-Ho Kim
 
-Categories
+Children typically learn to identify and express emotions through sharing their stories and feelings with others, particularly their family. However, it is challenging for parents or siblings to have emotional communication with children since children are still developing their communication skills. We present ChaCha, a chatbot that encourages and guides children to share personal events and associated emotions. ChaCha combines a state machine and large language models (LLMs) to keep the dialogue on track while carrying on free-form conversations. Through an exploratory study with 20 children (aged 8-12), we examine how ChaCha prompts children to share personal events and guides them to describe associated emotions. Participants perceived ChaCha as a close friend and shared their stories on various topics, such as family trips and personal achievements. Based on the findings, we discuss opportunities for leveraging LLMs to design child-friendly chatbots to support children in sharing emotions.
 
 ------------
 
@@ -402,9 +484,14 @@ Categories
 ::
 
     replaced with revised version Thu, 25 Jan 2024 22:06:42 GMT
+    Submission history From: Xubin Ren [view email]
+    [v1] Tue, 24 Oct 2023 15:51:13 UTC (866 KB)
+    [v2] Fri, 15 Dec 2023 13:11:05 UTC (867 KB)
+    [v3] Thu, 25 Jan 2024 22:06:42 UTC (867 KB)
+    [v4] Sun, 25 Feb 2024 05:44:27 UTC (867 KB)
     Xubin Ren, Wei Wei, Lianghao Xia, Lixin Su, Suqi Cheng, Junfeng Wang, Dawei Yin, Chao Huang
 
-Categories
+Recommender systems have seen significant advancements with the influence of deep learning and graph neural networks, particularly in capturing complex user-item relationships. However, these graph-based recommenders heavily depend on ID-based data, potentially disregarding valuable textual information associated with users and items, resulting in less informative learned representations. Moreover, the utilization of implicit feedback data introduces potential noise and bias, posing challenges for the effectiveness of user preference learning. While the integration of large language models (LLMs) into traditional ID-based recommenders has gained attention, challenges such as scalability issues, limitations in text-only reliance, and prompt input constraints need to be addressed for effective implementation in practical recommender systems. To address these challenges, we propose a model-agnostic framework RLMRec that aims to enhance existing recommenders with LLM-empowered representation learning. It proposes a recommendation paradigm that integrates representation learning with LLMs to capture intricate semantic aspects of user behaviors and preferences. RLMRec incorporates auxiliary textual signals, develops a user/item profiling paradigm empowered by LLMs, and aligns the semantic space of LLMs with the representation space of collaborative relational signals through a cross-view alignment framework. This work further establish a theoretical foundation demonstrating that incorporating textual signals through mutual information maximization enhances the quality of representations. In our evaluation, we integrate RLMRec with state-of-the-art recommender models, while also analyzing its efficiency and robustness to noise data. Our implementation codes are available at this https URL.
 
 ------------
 
@@ -413,9 +500,29 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 05:14:04 GMT
+    Submission history From: Yifan Yao [view email]
+    [v1] Mon, 4 Dec 2023 16:25:18 UTC (2,221 KB)
+    [v2] Fri, 26 Jan 2024 05:14:04 UTC (2,226 KB)
+    [v3] Wed, 20 Mar 2024 19:00:24 UTC (2,228 KB)
     Yifan Yao, Jinhao Duan, Kaidi Xu, Yuanfang Cai, Zhibo Sun and Yue Zhang
 
-Categories
+Large Language Models (LLMs), such as ChatGPT and Bard, have revolutionized natural language understanding and generation. They possess deep language comprehension, human-like text generation capabilities, contextual awareness, and robust problem-solving skills, making them invaluable in various domains (e.g., search engines, customer support, translation). In the meantime, LLMs have also gained traction in the security community, revealing security vulnerabilities and showcasing their potential in security-related tasks. This paper explores the intersection of LLMs with security and privacy. Specifically, we investigate how LLMs positively impact security and privacy, potential risks and threats associated with their use, and inherent vulnerabilities within LLMs. Through a comprehensive literature review, the paper categorizes the papers into "The Good" (beneficial LLM applications), "The Bad" (offensive applications), and "The Ugly" (vulnerabilities of LLMs and their defenses). We have some interesting findings. For example, LLMs have proven to enhance code security (code vulnerability detection) and data privacy (data confidentiality protection), outperforming traditional methods. However, they can also be harnessed for various attacks (particularly user-level attacks) due to their human-like reasoning abilities. We have identified areas that require further research efforts. For example, Research on model and parameter extraction attacks is limited and often theoretical, hindered by LLM parameter scale and confidentiality. Safe instruction tuning, a recent development, requires more exploration. We hope that our work can shed light on the LLMs' potential to both bolster and jeopardize cybersecurity.
+
+------------
+
+`[2401.06401] DevEval: Evaluating Code Generation in Practical Software Projects <https://arxiv.org/abs/2401.06401>`__
+
+::
+
+    replaced with revised version Fri, 26 Jan 2024 02:36:27 GMT
+    Submission history From: Jia Li [view email]
+    [v1] Fri, 12 Jan 2024 06:51:30 UTC (826 KB)
+    [v2] Fri, 26 Jan 2024 02:36:27 UTC (826 KB)
+    [v3] Tue, 5 Mar 2024 09:41:48 UTC (1 KB) (withdrawn)
+    [v4] Wed, 6 Mar 2024 02:16:51 UTC (1 KB) (withdrawn)
+    Jia Li, Ge Li, Yunfei Zhao, Yongmin Li, Zhi Jin, Hao Zhu, Huanyu Liu, Kaibo Liu, Lecheng Wang, Zheng Fang, Lanshen Wang, Jiazheng Ding, Xuanming Zhang, Yihong Dong, Yuqi Zhu, Bin Gu, Mengfei Yang
+
+How to evaluate Large Language Models (LLMs) in code generation is an open question. Many benchmarks have been proposed but are inconsistent with practical software projects, e.g., unreal program distributions, insufficient dependencies, and small-scale project contexts. Thus, the capabilities of LLMs in practical projects are still unclear. In this paper, we propose a new benchmark named DevEval, aligned with Developers' experiences in practical projects. DevEval is collected through a rigorous pipeline, containing 2,690 samples from 119 practical projects and covering 10 domains. Compared to previous benchmarks, DevEval aligns to practical projects in multiple dimensions, e.g., real program distributions, sufficient dependencies, and enough-scale project contexts. We assess five popular LLMs on DevEval (e.g., gpt-4, gpt-3.5-turbo, CodeLLaMa, and StarCoder) and reveal their actual abilities in code generation. For instance, the highest Pass@1 of gpt-3.5-turbo only is 42 in our experiments. We also discuss the challenges and future directions of code generation in practical projects. We open-source DevEval and hope it can facilitate the development of code generation in practical projects.
 
 ------------
 
@@ -424,9 +531,12 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 02:46:11 GMT
+    Submission history From: Yilun Liu [view email]
+    [v1] Tue, 15 Aug 2023 07:40:21 UTC (18,666 KB)
+    [v2] Fri, 26 Jan 2024 02:46:11 UTC (11,628 KB)
     Yilun Liu, Shimin Tao, Weibin Meng, Jingyu Wang, Wenbing Ma, Yanqing Zhao, Yuhang Chen, Hao Yang, Yanfei Jiang, Xun Chen
 
-Categories
+Automated log analysis is crucial in modern software-intensive systems for facilitating program comprehension throughout software maintenance and engineering life cycles. Existing methods perform tasks such as log parsing and log anomaly detection by providing a single prediction value without interpretation. However, given the increasing volume of system events, the limited interpretability of analysis results hinders analysts' comprehension of program status and their ability to take appropriate actions. Moreover, these methods require substantial in-domain training data, and their performance declines sharply (by up to 62.5%) in online scenarios involving unseen logs from new domains, a common occurrence due to rapid software updates. In this paper, we propose LogPrompt, a novel interpretable log analysis approach for online scenarios. LogPrompt employs large language models (LLMs) to perform online log analysis tasks via a suite of advanced prompt strategies tailored for log tasks, which enhances LLMs' performance by up to 380.7% compared with simple prompts. Experiments on nine publicly available evaluation datasets across two tasks demonstrate that LogPrompt, despite requiring no in-domain training, outperforms existing approaches trained on thousands of logs by up to 55.9%. We also conduct a human evaluation of LogPrompt's interpretability, with six practitioners possessing over 10 years of experience, who highly rated the generated content in terms of usefulness and readability (averagely 4.42/5). LogPrompt also exhibits remarkable compatibility with open-source and smaller-scale LLMs, making it flexible for practical deployment. Code of LogPrompt is available at this https URL.
 
 ------------
 
@@ -435,6 +545,9 @@ Categories
 ::
 
     replaced with revised version Fri, 26 Jan 2024 09:23:11 GMT
+    Submission history From: Wenfeng Liang [view email]
+    [v1] Thu, 25 Jan 2024 14:17:53 UTC (3,001 KB)
+    [v2] Fri, 26 Jan 2024 09:23:11 UTC (3,001 KB)
     Daya Guo, Qihao Zhu, Dejian Yang, Zhenda Xie, Kai Dong, Wentao Zhang, Guanting Chen, Xiao Bi, Y. Wu, Y.K. Li, Fuli Luo, Yingfei Xiong, Wenfeng Liang
 
-Categories
+The rapid development of large language models has revolutionized code intelligence in software development. However, the predominance of closed-source models has restricted extensive research and development. To address this, we introduce the DeepSeek-Coder series, a range of open-source code models with sizes from 1.3B to 33B, trained from scratch on 2 trillion tokens. These models are pre-trained on a high-quality project-level code corpus and employ a fill-in-the-blank task with a 16K window to enhance code generation and infilling. Our extensive evaluations demonstrate that DeepSeek-Coder not only achieves state-of-the-art performance among open-source code models across multiple benchmarks but also surpasses existing closed-source models like Codex and GPT-3.5. Furthermore, DeepSeek-Coder models are under a permissive license that allows for both research and unrestricted commercial use.

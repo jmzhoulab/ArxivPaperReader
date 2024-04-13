@@ -514,9 +514,12 @@ This paper designs novel nonparametric Bellman mappings in reproducing kernel Hi
 ::
 
     replaced with revised version Fri, 29 Mar 2024 09:01:56 GMT
+    Submission history From: Liwen Zhu [view email]
+    [v1] Sun, 4 Feb 2024 03:47:10 UTC (4,551 KB)
+    [v2] Fri, 29 Mar 2024 09:01:56 UTC (1,285 KB)
     Shuang Wu, Liwen Zhu, Tao Yang, Shiwei Xu, Qiang Fu, Yang Wei, Haobo Fu
 
-Categories
+This paper presents an innovative framework that integrates Large Language Models (LLMs) with an external Thinker module to enhance the reasoning capabilities of LLM-based agents. Unlike augmenting LLMs with prompt engineering, Thinker directly harnesses knowledge from databases and employs various optimization techniques. The framework forms a reasoning hierarchy where LLMs handle intuitive System-1 tasks such as natural language processing, while the Thinker focuses on cognitive System-2 tasks that require complex logical analysis and domain-specific knowledge. Our framework is presented using a 9-player Werewolf game that demands dual-system reasoning. We introduce a communication protocol between LLMs and the Thinker, and train the Thinker using data from 18800 human sessions and reinforcement learning. Experiments demonstrate the framework's effectiveness in deductive reasoning, speech generation, and online game evaluation. Additionally, we fine-tune a 6B LLM to surpass GPT4 when integrated with the Thinker. This paper also contributes the largest dataset for social deduction games to date.
 
 ------------
 
@@ -525,9 +528,13 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 04:38:51 GMT
+    Submission history From: Seil Kang [view email]
+    [v1] Tue, 19 Mar 2024 06:39:23 UTC (1,310 KB)
+    [v2] Thu, 28 Mar 2024 16:40:05 UTC (1,310 KB)
+    [v3] Fri, 29 Mar 2024 04:38:51 UTC (1,308 KB)
     Seil Kang, Donghyun Kim, Junhyeok Kim, Hyo Kyung Lee, Seong Jae Hwang
 
-Categories
+Significant methodological strides have been made toward Chest X-ray (CXR) understanding via modern vision-language models (VLMs), demonstrating impressive Visual Question Answering (VQA) and CXR report generation abilities. However, existing CXR understanding frameworks still possess several procedural caveats. (1) Previous methods solely use CXR reports, which are insufficient for comprehensive Visual Question Answering (VQA), especially when additional health-related data like medication history and prior diagnoses are needed. (2) Previous methods use raw CXR reports, which are often arbitrarily structured. While modern language models can understand various text formats, restructuring reports for clearer, organized anatomy-based information could enhance their usefulness. (3) Current evaluation methods for CXR-VQA primarily emphasize linguistic correctness, lacking the capability to offer nuanced assessments of the generated answers. In this work, to address the aforementioned caveats, we introduce WoLF, a Wide-scope Large Language Model Framework for CXR understanding. To resolve (1), we capture multi-faceted records of patients, which are utilized for accurate diagnoses in real-world clinical scenarios. Specifically, we adopt the Electronic Health Records (EHR) to generate instruction-following data suited for CXR understanding. Regarding (2), we enhance report generation performance by decoupling knowledge in CXR reports based on anatomical structure even within the attention step via masked attention. To address (3), we introduce an AI-evaluation protocol optimized for assessing the capabilities of LLM. Through extensive experimental validations, WoLF demonstrates superior performance over other models on MIMIC-CXR in the AI-evaluation arena about VQA (up to +9.47%p mean score) and by metrics about report generation (+7.3%p BLEU-1).
 
 ------------
 
@@ -536,9 +543,13 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 08:13:38 GMT
+    Submission history From: Qinghao Ye [view email]
+    [v1] Thu, 27 Apr 2023 13:27:01 UTC (32,001 KB)
+    [v2] Fri, 22 Mar 2024 07:23:22 UTC (32,001 KB)
+    [v3] Fri, 29 Mar 2024 08:13:38 UTC (32,001 KB)
     Qinghao Ye, Haiyang Xu, Guohai Xu, Jiabo Ye, Ming Yan, Yiyang Zhou, Junyang Wang, Anwen Hu, Pengcheng Shi, Yaya Shi, Chenliang Li, Yuanhong Xu, Hehong Chen, Junfeng Tian, Qi Qian, Ji Zhang, Fei Huang, Jingren Zhou
 
-Categories
+Large language models (LLMs) have demonstrated impressive zero-shot abilities on a variety of open-ended tasks, while recent research has also explored the use of LLMs for multi-modal generation. In this study, we introduce mPLUG-Owl, a novel training paradigm that equips LLMs with multi-modal abilities through modularized learning of foundation LLM, a visual knowledge module, and a visual abstractor module. This approach can support multiple modalities and facilitate diverse unimodal and multimodal abilities through modality collaboration. The training paradigm of mPLUG-Owl involves a two-stage method for aligning image and text, which learns visual knowledge with the assistance of LLM while maintaining and even improving the generation abilities of LLM. In the first stage, the visual knowledge module and abstractor module are trained with a frozen LLM module to align the image and text. In the second stage, language-only and multi-modal supervised datasets are used to jointly fine-tune a low-rank adaption (LoRA) module on LLM and the abstractor module by freezing the visual knowledge module. We carefully build a visually-related instruction evaluation set OwlEval. Experimental results show that our model outperforms existing multi-modal models, demonstrating mPLUG-Owl's impressive instruction and visual understanding ability, multi-turn conversation ability, and knowledge reasoning ability. Besides, we observe some unexpected and exciting abilities such as multi-image correlation and scene text understanding, which makes it possible to leverage it for harder real scenarios, such as vision-only document comprehension. Our code, pre-trained model, instruction-tuned models, and evaluation set are available at this https URL. The online demo is available at this https URL.
 
 ------------
 
@@ -547,9 +558,14 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 07:17:39 GMT
+    Submission history From: Shengnan An [view email]
+    [v1] Tue, 31 Oct 2023 17:52:22 UTC (594 KB)
+    [v2] Tue, 14 Nov 2023 02:37:55 UTC (594 KB)
+    [v3] Sat, 3 Feb 2024 10:13:39 UTC (5,138 KB)
+    [v4] Fri, 29 Mar 2024 07:17:39 UTC (1,760 KB)
     Shengnan An, Zexiong Ma, Zeqi Lin, Nanning Zheng, Jian-Guang Lou, Weizhu Chen
 
-Categories
+Large language models (LLMs) recently exhibited remarkable reasoning capabilities on solving math problems. To further improve their reasoning capabilities, this work explores whether LLMs can LEarn from MistAkes (LEMA), akin to the human learning process. Consider a human student who failed to solve a math problem, he will learn from what mistake he has made and how to correct it. Mimicking this error-driven learning process, LEMA incorporates mistake-correction data pairs during fine-tuning LLMs. Specifically, we first collect inaccurate reasoning paths from various LLMs, and then employ GPT-4 as a ''corrector'' to identify the mistake step, explain the reason for the mistake, correct the mistake and generate the final answer. In addition, we apply a correction-centric evolution strategy that effectively expands the question set for generating correction data. Experiments across various LLMs and reasoning tasks show that LEMA effectively improves CoT-alone fine-tuning. Our further ablations shed light on the non-homogeneous effectiveness between CoT data and correction data. These results suggest a significant potential for LLMs to improve through learning from their mistakes. Our code, models and prompts are publicly available at this https URL.
 
 ------------
 
@@ -558,9 +574,55 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 11:35:30 GMT
+    Submission history From: Jiao Ou [view email]
+    [v1] Fri, 3 Nov 2023 02:59:56 UTC (605 KB)
+    [v2] Fri, 29 Mar 2024 11:35:30 UTC (8,611 KB)
     Jiao Ou, Junda Lu, Che Liu, Yihong Tang, Fuzheng Zhang, Di Zhang, Kun Gai
 
-Categories
+Large language models (LLMs) have achieved remarkable breakthroughs in new dialogue capabilities by leveraging instruction tuning, which refreshes human impressions of dialogue systems. The long-standing goal of dialogue systems is to be human-like enough to establish long-term connections with users. Therefore, there has been an urgent need to evaluate LLMs as human-like dialogue systems. In this paper, we propose DialogBench, a dialogue evaluation benchmark that contains 12 dialogue tasks to probe the capabilities of LLMs as human-like dialogue systems should have. Specifically, we prompt GPT-4 to generate evaluation instances for each task. We first design the basic prompt based on widely used design principles and further mitigate the existing biases to generate higher-quality evaluation instances. Our extensive tests on English and Chinese DialogBench of 26 LLMs show that instruction tuning improves the human likeness of LLMs to a certain extent, but most LLMs still have much room for improvement as human-like dialogue systems. Interestingly, results also show that the positioning of assistant AI can make instruction tuning weaken the human emotional perception of LLMs and their mastery of information about human daily life.
+
+------------
+
+`[2311.08590] PEMA: An Offsite-Tunable Plug-in External Memory Adaptation for Language Models <https://arxiv.org/abs/2311.08590>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 11:24:46 GMT
+    Submission history From: HyunJin Kim Mr [view email]
+    [v1] Tue, 14 Nov 2023 23:20:51 UTC (3,914 KB)
+    [v2] Wed, 27 Mar 2024 05:53:58 UTC (7,525 KB)
+    [v3] Fri, 29 Mar 2024 11:24:46 UTC (7,497 KB)
+    HyunJin Kim, Young Jin Kim, JinYeong Bak
+
+Pre-trained language models (PLMs) show impressive performance in various downstream NLP tasks. However, pre-training large language models demands substantial memory and training compute. Furthermore, due to the substantial resources required, many PLM weights are confidential. Consequently, users are compelled to share their data with model owners for fine-tuning specific tasks. To overcome the limitations, we introduce Plug-in External Memory Adaptation (PEMA), a Parameter-Efficient Fine-Tuning (PEFT) method, enabling PLM fine-tuning without requiring access to all the weights. PEMA integrates with context representations from test data during inference to perform downstream tasks. It uses external memory to store PLM-generated context representations mapped with target tokens. Our method utilizes weight matrices of LoRA-like bottlenecked adapter in the PLM's final layer to enhance efficiency. Our approach also includes Gradual Unrolling, a novel interpolation strategy to improve generation quality. We validate PEMA's effectiveness through experiments on syntactic and real datasets for machine translation and style transfer. Our findings show that PEMA outperforms other PEFT approaches in memory and latency efficiency for training, and also excels in maintaining sentence meaning and generating appropriate language and styles.
+
+------------
+
+`[2312.17269] Conversational Question Answering with Reformulations over Knowledge Graph <https://arxiv.org/abs/2312.17269>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 06:32:18 GMT
+    Submission history From: Lihui Liu [view email]
+    [v1] Wed, 27 Dec 2023 00:03:05 UTC (707 KB)
+    [v2] Fri, 29 Mar 2024 06:32:18 UTC (707 KB)
+    Lihui Liu, Blaine Hill, Boxin Du, Fei Wang, Hanghang Tong
+
+Conversational question answering (convQA) over knowledge graphs (KGs) involves answering multi-turn natural language questions about information contained in a KG. State-of-the-art methods of ConvQA often struggle with inexplicit question-answer pairs. These inputs are easy for human beings to understand given a conversation history, but hard for a machine to interpret, which can degrade ConvQA performance. To address this problem, we propose a reinforcement learning (RL) based model, CornNet, which utilizes question reformulations generated by large language models (LLMs) to improve ConvQA performance. CornNet adopts a teacher-student architecture where a teacher model learns question representations using human writing reformulations, and a student model to mimic the teacher model's output via reformulations generated by LLMs. The learned question representation is then used by an RL model to locate the correct answer in a KG. Extensive experimental results show that CornNet outperforms state-of-the-art convQA models.
+
+------------
+
+`[2401.05632] Natural Language Processing for Dialects of a Language: A Survey <https://arxiv.org/abs/2401.05632>`__
+
+::
+
+    replaced with revised version Thu, 28 Mar 2024 21:47:46 GMT
+    Submission history From: Aditya Joshi [view email]
+    [v1] Thu, 11 Jan 2024 03:04:38 UTC (7,358 KB)
+    [v2] Thu, 28 Mar 2024 21:47:46 UTC (7,369 KB)
+    Aditya Joshi, Raj Dabre, Diptesh Kanojia, Zhuang Li, Haolan Zhan, Gholamreza Haffari, Doris Dippold
+
+State-of-the-art natural language processing (NLP) models are trained on massive training corpora, and report a superlative performance on evaluation datasets. This survey delves into an important attribute of these datasets: the dialect of a language. Motivated by the performance degradation of NLP models for dialectic datasets and its implications for the equity of language technologies, we survey past research in NLP for dialects in terms of datasets, and approaches. We describe a wide range of NLP tasks in terms of two categories: natural language understanding (NLU) (for tasks such as dialect classification, sentiment analysis, parsing, and NLU benchmarks) and natural language generation (NLG) (for summarisation, machine translation, and dialogue systems). The survey is also broad in its coverage of languages which include English, Arabic, German among others. We observe that past work in NLP concerning dialects goes deeper than mere dialect classification, and . This includes early approaches that used sentence transduction that lead to the recent approaches that integrate hypernetworks into LoRA. We expect that this survey will be useful to NLP researchers interested in building equitable language technologies by rethinking LLM benchmarks and model architectures.
 
 ------------
 
@@ -569,9 +631,14 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 14:56:42 GMT
+    Submission history From: Manuel Faysse [view email]
+    [v1] Thu, 1 Feb 2024 17:17:55 UTC (4,603 KB)
+    [v2] Fri, 2 Feb 2024 17:43:41 UTC (4,612 KB)
+    [v3] Tue, 13 Feb 2024 17:12:26 UTC (4,612 KB)
+    [v4] Fri, 29 Mar 2024 14:56:42 UTC (4,612 KB)
     Manuel Faysse, Patrick Fernandes, Nuno M. Guerreiro, Ant\'onio Loison, Duarte M. Alves, Caio Corro, Nicolas Boizard, Jo\~ao Alves, Ricardo Rei, Pedro H. Martins, Antoni Bigata Casademunt, Fran\c{c}ois Yvon, Andr\'e F.T. Martins, Gautier Viaud, C\'eline Hudelot, Pierre Colombo
 
-Categories
+We introduce CroissantLLM, a 1.3B language model pretrained on a set of 3T English and French tokens, to bring to the research and industrial community a high-performance, fully open-sourced bilingual model that runs swiftly on consumer-grade local hardware. To that end, we pioneer the approach of training an intrinsically bilingual model with a 1:1 English-to-French pretraining data ratio, a custom tokenizer, and bilingual finetuning datasets. We release the training dataset, notably containing a French split with manually curated, high-quality, and varied data sources. To assess performance outside of English, we craft a novel benchmark, FrenchBench, consisting of an array of classification and generation tasks, covering various orthogonal aspects of model performance in the French Language. Additionally, rooted in transparency and to foster further Large Language Model research, we release codebases, and dozens of checkpoints across various model sizes, training data distributions, and training steps, as well as fine-tuned Chat models, and strong translation models. We evaluate our model through the FMTI framework, and validate 81 % of the transparency criteria, far beyond the scores of even most open initiatives. This work enriches the NLP landscape, breaking away from previous English-centric work in order to strengthen our understanding of multilinguality in language models.
 
 ------------
 
@@ -580,9 +647,12 @@ Categories
 ::
 
     replaced with revised version Thu, 28 Mar 2024 19:41:34 GMT
+    Submission history From: Chen Ling [view email]
+    [v1] Thu, 15 Feb 2024 18:46:24 UTC (1,451 KB)
+    [v2] Thu, 28 Mar 2024 19:41:34 UTC (1,453 KB)
     Chen Ling, Xujiang Zhao, Xuchao Zhang, Wei Cheng, Yanchi Liu, Yiyou Sun, Mika Oishi, Takao Osaki, Katsushi Matsuda, Jie Ji, Guangji Bai, Liang Zhao, Haifeng Chen
 
-Categories
+In-context learning has emerged as a groundbreaking ability of Large Language Models (LLMs) and revolutionized various fields by providing a few task-relevant demonstrations in the prompt. However, trustworthy issues with LLM's response, such as hallucination, have also been actively discussed. Existing works have been devoted to quantifying the uncertainty in LLM's response, but they often overlook the complex nature of LLMs and the uniqueness of in-context learning. In this work, we delve into the predictive uncertainty of LLMs associated with in-context learning, highlighting that such uncertainties may stem from both the provided demonstrations (aleatoric uncertainty) and ambiguities tied to the model's configurations (epistemic uncertainty). We propose a novel formulation and corresponding estimation method to quantify both types of uncertainties. The proposed method offers an unsupervised way to understand the prediction of in-context learning in a plug-and-play fashion. Extensive experiments are conducted to demonstrate the effectiveness of the decomposition. The code and data are available at: this https URL.
 
 ------------
 
@@ -591,9 +661,148 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 15:01:38 GMT
+    Submission history From: Jaylen Jones [view email]
+    [v1] Sun, 18 Feb 2024 18:56:07 UTC (7,067 KB)
+    [v2] Fri, 29 Mar 2024 15:01:38 UTC (7,068 KB)
     Jaylen Jones, Lingbo Mo, Eric Fosler-Lussier, Huan Sun
 
-Categories
+Counter narratives - informed responses to hate speech contexts designed to refute hateful claims and de-escalate encounters - have emerged as an effective hate speech intervention strategy. While previous work has proposed automatic counter narrative generation methods to aid manual interventions, the evaluation of these approaches remains underdeveloped. Previous automatic metrics for counter narrative evaluation lack alignment with human judgment as they rely on superficial reference comparisons instead of incorporating key aspects of counter narrative quality as evaluation criteria. To address prior evaluation limitations, we propose a novel evaluation framework prompting LLMs to provide scores and feedback for generated counter narrative candidates using 5 defined aspects derived from guidelines from counter narrative specialized NGOs. We found that LLM evaluators achieve strong alignment to human-annotated scores and feedback and outperform alternative metrics, indicating their potential as multi-aspect, reference-free and interpretable evaluators for counter narrative evaluation.
+
+------------
+
+`[2403.09488] Rectifying Demonstration Shortcut in In-Context Learning <https://arxiv.org/abs/2403.09488>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 05:51:11 GMT
+    Submission history From: Joonwon Jang [view email]
+    [v1] Thu, 14 Mar 2024 15:30:14 UTC (2,853 KB)
+    [v2] Fri, 29 Mar 2024 05:51:11 UTC (2,854 KB)
+    Joonwon Jang, Sanghwan Jang, Wonbin Kweon, Minjin Jeon and Hwanjo Yu
+
+Large language models (LLMs) are able to solve various tasks with only a few demonstrations utilizing their in-context learning (ICL) abilities. However, LLMs often rely on their pre-trained semantic priors of demonstrations rather than on the input-label relationships to proceed with ICL prediction. In this work, we term this phenomenon as the 'Demonstration Shortcut'. While previous works have primarily focused on improving ICL prediction results for predefined tasks, we aim to rectify the Demonstration Shortcut, thereby enabling the LLM to effectively learn new input-label relationships from demonstrations. To achieve this, we introduce In-Context Calibration, a demonstration-aware calibration method. We evaluate the effectiveness of the proposed method in two settings: (1) the Original ICL Task using the standard label space and (2) the Task Learning setting, where the label space is replaced with semantically unrelated tokens. In both settings, In-Context Calibration demonstrates substantial improvements, with results generalized across three LLM families (OPT, GPT, and Llama2) under various configurations.
+
+------------
+
+`[2403.09732] PET-SQL: A Prompt-enhanced Two-stage Text-to-SQL Framework with Cross-consistency <https://arxiv.org/abs/2403.09732>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 03:21:01 GMT
+    Submission history From: Zhishuai Li [view email]
+    [v1] Wed, 13 Mar 2024 02:32:41 UTC (153 KB)
+    [v2] Mon, 18 Mar 2024 12:45:41 UTC (159 KB)
+    [v3] Fri, 29 Mar 2024 03:21:01 UTC (159 KB)
+    Zhishuai Li, Xiang Wang, Jingjing Zhao, Sun Yang, Guoqing Du, Xiaoru Hu, Bin Zhang, Yuxiao Ye, Ziyue Li, Rui Zhao, Hangyu Mao
+
+Recent advancements in Text-to-SQL (Text2SQL) emphasize stimulating the large language models (LLM) on in-context learning, achieving significant results. Nevertheless, they face challenges when dealing with verbose database information and complex user intentions. This paper presents a two-stage framework to enhance the performance of current LLM-based natural language to SQL systems. We first introduce a novel prompt representation, called reference-enhanced representation, which includes schema information and randomly sampled cell values from tables to instruct LLMs in generating SQL queries. Then, in the first stage, question-SQL pairs are retrieved as few-shot demonstrations, prompting the LLM to generate a preliminary SQL (PreSQL). After that, the mentioned entities in PreSQL are parsed to conduct schema linking, which can significantly compact the useful information. In the second stage, with the linked schema, we simplify the prompt's schema information and instruct the LLM to produce the final SQL. Finally, as the post-refinement module, we propose using cross-consistency across different LLMs rather than self-consistency within a particular LLM. Our methods achieve new SOTA results on the Spider benchmark, with an execution accuracy of 87.6%.
+
+------------
+
+`[2310.05737] Language Model Beats Diffusion -- Tokenizer is Key to Visual Generation <https://arxiv.org/abs/2310.05737>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 17:44:41 GMT
+    Submission history From: Lijun Yu [view email]
+    [v1] Mon, 9 Oct 2023 14:10:29 UTC (6,689 KB)
+    [v2] Wed, 13 Mar 2024 05:34:20 UTC (7,027 KB)
+    [v3] Fri, 29 Mar 2024 17:44:41 UTC (7,016 KB)
+    Lijun Yu, Jos\'e Lezama, Nitesh B. Gundavarapu, Luca Versari, Kihyuk Sohn, David Minnen, Yong Cheng, Vighnesh Birodkar, Agrim Gupta, Xiuye Gu, Alexander G. Hauptmann, Boqing Gong, Ming-Hsuan Yang, Irfan Essa, David A. Ross, Lu Jiang
+
+While Large Language Models (LLMs) are the dominant models for generative tasks in language, they do not perform as well as diffusion models on image and video generation. To effectively use LLMs for visual generation, one crucial component is the visual tokenizer that maps pixel-space inputs to discrete tokens appropriate for LLM learning. In this paper, we introduce MAGVIT-v2, a video tokenizer designed to generate concise and expressive tokens for both videos and images using a common token vocabulary. Equipped with this new tokenizer, we show that LLMs outperform diffusion models on standard image and video generation benchmarks including ImageNet and Kinetics. In addition, we demonstrate that our tokenizer surpasses the previously top-performing video tokenizer on two more tasks: (1) video compression comparable to the next-generation video codec (VCC) according to human evaluations, and (2) learning effective representations for action recognition tasks.
+
+------------
+
+`[2310.13001] Conversational Financial Information Retrieval Model (ConFIRM) <https://arxiv.org/abs/2310.13001>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 05:51:53 GMT
+    Submission history From: Stephen Choi [view email]
+    [v1] Fri, 6 Oct 2023 12:31:05 UTC (1,010 KB)
+    [v2] Fri, 10 Nov 2023 07:15:17 UTC (1,008 KB)
+    [v3] Fri, 29 Mar 2024 05:51:53 UTC (1,006 KB)
+    Stephen Choi, William Gazeley, Siu Ho Wong, Tingting Li
+
+With the exponential growth in large language models (LLMs), leveraging their emergent properties for specialized domains like finance merits exploration. However, regulated fields such as finance pose unique constraints, requiring domain-optimized frameworks. We present ConFIRM, an LLM-based conversational financial information retrieval model tailored for query intent classification and knowledge base labeling.
+ConFIRM comprises two modules:
+1) a method to synthesize finance domain-specific question-answer pairs, and
+2) evaluation of parameter efficient fine-tuning approaches for the query classification task. We generate a dataset of over 4000 samples, assessing accuracy on a separate test set.
+ConFIRM achieved over 90% accuracy, essential for regulatory compliance. ConFIRM provides a data-efficient solution to extract precise query intent for financial dialog systems.
+
+------------
+
+`[2311.17076] Compositional Chain-of-Thought Prompting for Large Multimodal Models <https://arxiv.org/abs/2311.17076>`__
+
+::
+
+    replaced with revised version Thu, 28 Mar 2024 23:02:27 GMT
+    Submission history From: Chancharik Mitra [view email]
+    [v1] Mon, 27 Nov 2023 22:23:27 UTC (2,910 KB)
+    [v2] Thu, 28 Mar 2024 23:02:27 UTC (6,252 KB)
+    [v3] Mon, 1 Apr 2024 03:17:09 UTC (6,252 KB)
+    Chancharik Mitra, Brandon Huang, Trevor Darrell, Roei Herzig
+
+The combination of strong visual backbones and Large Language Model (LLM) reasoning has led to Large Multimodal Models (LMMs) becoming the current standard for a wide range of vision and language (VL) tasks. However, recent research has shown that even the most advanced LMMs still struggle to capture aspects of compositional visual reasoning, such as attributes and relationships between objects. One solution is to utilize scene graphs (SGs)--a formalization of objects and their relations and attributes that has been extensively used as a bridge between the visual and textual domains. Yet, scene graph data requires scene graph annotations, which are expensive to collect and thus not easily scalable. Moreover, finetuning an LMM based on SG data can lead to catastrophic forgetting of the pretraining objective. To overcome this, inspired by chain-of-thought methods, we propose Compositional Chain-of-Thought (CCoT), a novel zero-shot Chain-of-Thought prompting method that utilizes SG representations in order to extract compositional knowledge from an LMM. Specifically, we first generate an SG using the LMM, and then use that SG in the prompt to produce a response. Through extensive experiments, we find that the proposed CCoT approach not only improves LMM performance on several vision and language VL compositional benchmarks but also improves the performance of several popular LMMs on general multimodal benchmarks, without the need for fine-tuning or annotated ground-truth SGs. Code: this https URL
+
+------------
+
+`[2312.05291] GlitchBench: Can large multimodal models detect video game glitches? <https://arxiv.org/abs/2312.05291>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 16:49:59 GMT
+    Submission history From: Mohammad Reza Taesiri [view email]
+    [v1] Fri, 8 Dec 2023 18:14:21 UTC (7,357 KB)
+    [v2] Fri, 29 Mar 2024 16:49:59 UTC (7,359 KB)
+    Mohammad Reza Taesiri, Tianjun Feng, Anh Nguyen, Cor-Paul Bezemer
+
+Large multimodal models (LMMs) have evolved from large language models (LLMs) to integrate multiple input modalities, such as visual inputs. This integration augments the capacity of LLMs for tasks requiring visual comprehension and reasoning. However, the extent and limitations of their enhanced abilities are not fully understood, especially when it comes to real-world tasks. To address this gap, we introduce GlitchBench, a novel benchmark derived from video game quality assurance tasks, to test and evaluate the reasoning capabilities of LMMs. Our benchmark is curated from a variety of unusual and glitched scenarios from video games and aims to challenge both the visual and linguistic reasoning powers of LMMs in detecting and interpreting out-of-the-ordinary events. We evaluate multiple state-of-the-art LMMs, and we show that GlitchBench presents a new challenge for these models. Code and data are available at: this https URL
+
+------------
+
+`[2403.15585] MedPromptX: Grounded Multimodal Prompting for Chest X-ray Diagnosis <https://arxiv.org/abs/2403.15585>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 00:44:18 GMT
+    Submission history From: Mai A. Shaaban [view email]
+    [v1] Fri, 22 Mar 2024 19:19:51 UTC (8,600 KB)
+    [v2] Tue, 26 Mar 2024 14:51:57 UTC (8,600 KB)
+    [v3] Fri, 29 Mar 2024 00:44:18 UTC (8,600 KB)
+    Mai A. Shaaban, Adnan Khan, Mohammad Yaqub
+
+Chest X-ray images are commonly used for predicting acute and chronic cardiopulmonary conditions, but efforts to integrate them with structured clinical data face challenges due to incomplete electronic health records (EHR). This paper introduces MedPromptX, the first model to integrate multimodal large language models (MLLMs), few-shot prompting (FP) and visual grounding (VG) to combine imagery with EHR data for chest X-ray diagnosis. A pre-trained MLLM is utilized to complement the missing EHR information, providing a comprehensive understanding of patients' medical history. Additionally, FP reduces the necessity for extensive training of MLLMs while effectively tackling the issue of hallucination. Nevertheless, the process of determining the optimal number of few-shot examples and selecting high-quality candidates can be burdensome, yet it profoundly influences model performance. Hence, we propose a new technique that dynamically refines few-shot data for real-time adjustment to new patient scenarios. Moreover, VG aids in focusing the model's attention on relevant regions of interest in X-ray images, enhancing the identification of abnormalities. We release MedPromptX-VQA, a new in-context visual question answering dataset encompassing interleaved image and EHR data derived from MIMIC-IV and MIMIC-CXR databases. Results demonstrate the SOTA performance of MedPromptX, achieving an 11% improvement in F1-score compared to the baselines. Code and data are available at this https URL
+
+------------
+
+`[2403.17343] Residual-based Language Models are Free Boosters for Biomedical Imaging <https://arxiv.org/abs/2403.17343>`__
+
+::
+
+    replaced with revised version Thu, 28 Mar 2024 21:28:00 GMT
+    Submission history From: Jing Wu [view email]
+    [v1] Tue, 26 Mar 2024 03:05:20 UTC (2,127 KB)
+    [v2] Wed, 27 Mar 2024 02:49:16 UTC (2,127 KB)
+    [v3] Thu, 28 Mar 2024 21:28:00 UTC (2,180 KB)
+    Zhixin Lai, Jing Wu, Suiyao Chen, Yucheng Zhou, Naira Hovakimyan
+
+In this study, we uncover the unexpected efficacy of residual-based large language models (LLMs) as part of encoders for biomedical imaging tasks, a domain traditionally devoid of language or textual data. The approach diverges from established methodologies by utilizing a frozen transformer block, extracted from pre-trained LLMs, as an innovative encoder layer for the direct processing of visual tokens. This strategy represents a significant departure from the standard multi-modal vision-language frameworks, which typically hinge on language-driven prompts and inputs. We found that these LLMs could boost performance across a spectrum of biomedical imaging applications, including both 2D and 3D visual classification tasks, serving as plug-and-play boosters. More interestingly, as a byproduct, we found that the proposed framework achieved superior performance, setting new state-of-the-art results on extensive, standardized datasets in MedMNIST-2D and 3D. Through this work, we aim to open new avenues for employing LLMs in biomedical imaging and enriching the understanding of their potential in this specialized domain.
+
+------------
+
+`[2304.05301] TACOS: Topology-Aware Collective Algorithm Synthesizer for Distributed Machine Learning <https://arxiv.org/abs/2304.05301>`__
+
+::
+
+    replaced with revised version Fri, 29 Mar 2024 17:34:59 GMT
+    Submission history From: William Won [view email]
+    [v1] Tue, 11 Apr 2023 15:50:54 UTC (407 KB)
+    [v2] Fri, 29 Mar 2024 17:34:59 UTC (718 KB)
+    William Won, Midhilesh Elavazhagan, Sudarshan Srinivasan, Ajaya Durg, Samvit Kaul, Swati Gupta, Tushar Krishna
+
+The surge of artificial intelligence, specifically large language models, has led to a rapid advent towards the development of large-scale machine learning training clusters. Collective communications within these clusters tend to be heavily bandwidth-bound, necessitating techniques to optimally utilize the available network bandwidth. This puts the routing algorithm for the collective at the forefront of determining the performance. Unfortunately, communication libraries used in distributed machine learning today are limited by a fixed set of routing algorithms. This constraints collective performance within the domain of next-generation training clusters that employ intricate, heterogeneous, and asymmetric, large-scale topologies. Further, the emergence of irregular topologies attributed to runtime phenomena such as device failures serves to compound the complexity of the challenge. To this end, this paper introduces TACOS, an automated synthesizer that generates topology-aware collective algorithms for common distributed machine learning collectives across arbitrary input network topologies. TACOS was able to synthesize All-Reduce algorithm for a heterogeneous 512-NPU system in just 6.09 minutes while achieving performance improvement up to 4.27x over state-of-the-art prior work. TACOS exhibits high scalability, with synthesis time scaling quadratically with the number of NPUs. In contrast to prior works' NP-hard approaches, TACOS with 40K NPUs completes in 2.52 hours.
 
 ------------
 
@@ -602,6 +811,9 @@ Categories
 ::
 
     replaced with revised version Fri, 29 Mar 2024 15:44:05 GMT
+    Submission history From: Ying Wang [view email]
+    [v1] Thu, 7 Dec 2023 19:19:25 UTC (6,067 KB)
+    [v2] Fri, 29 Mar 2024 15:44:05 UTC (5,517 KB)
     Ying Wang, Yanlai Yang, Mengye Ren
 
-Categories
+In this paper we introduce LifelongMemory, a new framework for accessing long-form egocentric videographic memory through natural language question answering and retrieval. LifelongMemory generates concise video activity descriptions of the camera wearer and leverages the zero-shot capabilities of pretrained large language models to perform reasoning over long-form video context. Furthermore, Lifelong Memory uses a confidence and explanation module to produce confident, high-quality, and interpretable answers. Our approach achieves state-of-the-art performance on the EgoSchema benchmark for question answering and is highly competitive on the natural language query (NLQ) challenge of Ego4D. Code is available at this https URL.

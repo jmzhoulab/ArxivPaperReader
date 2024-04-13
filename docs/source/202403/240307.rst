@@ -505,14 +505,47 @@ Neural networks have become a cornerstone of machine learning. As the trend for 
 
 ------------
 
+`[2308.01154] Arithmetic with Language Models: from Memorization to Computation <https://arxiv.org/abs/2308.01154>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 09:39:16 GMT
+    Submission history From: Matteo Ferrara [view email]
+    [v1] Wed, 2 Aug 2023 13:58:37 UTC (728 KB)
+    [v2] Thu, 25 Jan 2024 10:04:49 UTC (1,403 KB)
+    [v3] Wed, 6 Mar 2024 09:39:16 UTC (1,141 KB)
+    Davide Maltoni and Matteo Ferrara
+
+A better understanding of the emergent computation and problem-solving capabilities of recent large language models is of paramount importance to further improve them and broaden their applicability. This work investigates how a language model, trained to predict the next token, can perform arithmetic computations generalizing beyond training data. Binary addition and multiplication constitute a good testbed for this purpose, since they require a very small vocabulary and exhibit relevant input/output discontinuities making smooth input interpolation ineffective for novel data. We successfully trained a light language model to learn these tasks and ran a number of experiments to investigate the extrapolation capabilities and internal information processing. Our findings support the hypothesis that the language model works as an Encoding-Regression-Decoding machine where the computation takes place in the value space once the input token representation is mapped to an appropriate internal representation.
+
+------------
+
 `[2310.00194] A Prefrontal Cortex-inspired Architecture for Planning in Large Language Models <https://arxiv.org/abs/2310.00194>`__
 
 ::
 
     replaced with revised version Wed, 6 Mar 2024 03:24:45 GMT
+    Submission history From: Taylor Webb [view email]
+    [v1] Sat, 30 Sep 2023 00:10:14 UTC (1,570 KB)
+    [v2] Tue, 5 Mar 2024 18:12:06 UTC (505 KB)
+    [v3] Wed, 6 Mar 2024 03:24:45 UTC (505 KB)
     Taylor Webb, Shanka Subhra Mondal, Chi Wang, Brian Krabach, Ida Momennejad
 
-Categories
+Large language models (LLMs) demonstrate impressive performance on a wide variety of tasks, but they often struggle with tasks that require multi-step reasoning or goal-directed planning. To address this, we take inspiration from the human brain, in which planning is accomplished via the recurrent interaction of specialized modules in the prefrontal cortex (PFC). These modules perform functions such as conflict monitoring, state prediction, state evaluation, task decomposition, and task coordination. We find that LLMs are sometimes capable of carrying out these functions in isolation, but struggle to autonomously coordinate them in the service of a goal. Therefore, we propose a black box architecture with multiple LLM-based (GPT-4) modules. The architecture improves planning through the interaction of specialized PFC-inspired modules that break down a larger problem into multiple brief automated calls to the LLM. We evaluate the combined architecture on three challenging planning tasks -- graph traversal, Tower of Hanoi, and logistics -- finding that it yields significant improvements over standard LLM methods (e.g., zero-shot prompting, in-context learning, and chain-of-thought). These results demonstrate the benefit of utilizing knowledge from cognitive neuroscience to improve planning in LLMs.
+
+------------
+
+`[2308.00071] Interpretable Stereotype Identification through Reasoning <https://arxiv.org/abs/2308.00071>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 18:49:55 GMT
+    Submission history From: Faiza Khattak Dr. [view email]
+    [v1] Mon, 24 Jul 2023 15:12:13 UTC (1,060 KB)
+    [v2] Wed, 6 Mar 2024 18:49:55 UTC (1,457 KB)
+    Jacob-Junqi Tian, Omkar Dige, David Emerson, Faiza Khan Khattak
+
+Given that language models are trained on vast datasets that may contain inherent biases, there is a potential danger of inadvertently perpetuating systemic discrimination. Consequently, it becomes essential to examine and address biases in language models, integrating fairness into their development to ensure these models are equitable and free from bias. In this work, we demonstrate the importance of reasoning in zero-shot stereotype identification based on Vicuna-13B-v1.3. While we do observe improved accuracy by scaling from 13B to 33B, we show that the performance gain from reasoning significantly exceeds the gain from scaling up. Our findings suggest that reasoning could be a key factor that enables LLMs to trescend the scaling law on out-of-domain tasks such as stereotype identification. Additionally, through a qualitative analysis of select reasoning traces, we highlight how reasoning enhances not just accuracy but also the interpretability of the decision.
 
 ------------
 
@@ -521,9 +554,29 @@ Categories
 ::
 
     replaced with revised version Tue, 5 Mar 2024 21:26:54 GMT
+    Submission history From: Iain Cruickshank [view email]
+    [v1] Sun, 24 Sep 2023 19:36:17 UTC (143 KB)
+    [v2] Tue, 5 Mar 2024 21:26:54 UTC (1,165 KB)
     Iain J. Cruickshank and Lynnette Hui Xian Ng
 
-Categories
+Stance classification, the task of predicting the viewpoint of an author on a subject of interest, has long been a focal point of research in domains ranging from social science to machine learning. Current stance detection methods rely predominantly on manual annotation of sentences, followed by training a supervised machine learning model. However, this manual annotation process requires laborious annotation effort, and thus hampers its potential to generalize across different contexts. In this work, we investigate the use of Large Language Models (LLMs) as a stance detection methodology that can reduce or even eliminate the need for manual annotations. We investigate 10 open-source models and 7 prompting schemes, finding that LLMs are competitive with in-domain supervised models but are not necessarily consistent in their performance. We also fine-tuned the LLMs, but discovered that fine-tuning process does not necessarily lead to better performance. In general, we discover that LLMs do not routinely outperform their smaller supervised machine learning models, and thus call for stance detection to be a benchmark for which LLMs also optimize for. The code used in this study is available at \url{this https URL}
+
+------------
+
+`[2310.03668] GoLLIE: Annotation Guidelines improve Zero-Shot Information-Extraction <https://arxiv.org/abs/2310.03668>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 16:38:03 GMT
+    Submission history From: Iker García-Ferrero [view email]
+    [v1] Thu, 5 Oct 2023 16:43:13 UTC (9,011 KB)
+    [v2] Fri, 6 Oct 2023 17:41:15 UTC (9,011 KB)
+    [v3] Mon, 11 Dec 2023 08:24:40 UTC (9,543 KB)
+    [v4] Wed, 21 Feb 2024 15:51:58 UTC (9,832 KB)
+    [v5] Wed, 6 Mar 2024 16:38:03 UTC (9,832 KB)
+    Oscar Sainz, Iker Garc\'ia-Ferrero, Rodrigo Agerri, Oier Lopez de Lacalle, German Rigau, Eneko Agirre
+
+Large Language Models (LLMs) combined with instruction tuning have made significant progress when generalizing to unseen tasks. However, they have been less successful in Information Extraction (IE), lagging behind task-specific models. Typically, IE tasks are characterized by complex annotation guidelines that describe the task and give examples to humans. Previous attempts to leverage such information have failed, even with the largest models, as they are not able to follow the guidelines out of the box. In this paper, we propose GoLLIE (Guideline-following Large Language Model for IE), a model able to improve zero-shot results on unseen IE tasks by virtue of being fine-tuned to comply with annotation guidelines. Comprehensive evaluation empirically demonstrates that GoLLIE is able to generalize to and follow unseen guidelines, outperforming previous attempts at zero-shot information extraction. The ablation study shows that detailed guidelines are key for good results.
 
 ------------
 
@@ -532,9 +585,12 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 15:50:02 GMT
+    Submission history From: Shih-Cheng Huang [view email]
+    [v1] Sat, 7 Oct 2023 13:34:21 UTC (3,479 KB)
+    [v2] Wed, 6 Mar 2024 15:50:02 UTC (12,239 KB)
     Shih-Cheng Huang, Pin-Zu Li, Yu-Chi Hsu, Kuang-Ming Chen, Yu Tung Lin, Shih-Kai Hsiao, Richard Tzong-Han Tsai, Hung-yi Lee
 
-Categories
+Recently, the development of open-source large language models (LLMs) has advanced rapidly. Nevertheless, due to data constraints, the capabilities of most open-source LLMs are primarily focused on English. To address this issue, we introduce the concept of chat vector to equip pre-trained language models with instruction following and human value alignment via simple model arithmetic. The chat vector is derived by subtracting the weights of a pre-trained base model (e.g. LLaMA2) from those of its corresponding chat model (e.g. LLaMA2-chat). By simply adding the chat vector to a continual pre-trained model's weights, we can endow the model with chat capabilities in new languages without the need for further training. Our empirical studies demonstrate the superior efficacy of the chat vector from three different aspects: instruction following, toxicity mitigation, and multi-turn dialogue. Moreover, to showcase the adaptability of our approach, we extend our experiments to encompass various languages, base models, and chat vectors. The results underscore the chat vector's simplicity, effectiveness, and wide applicability, making it a compelling solution for efficiently enabling conversational capabilities in pre-trained language models.
 
 ------------
 
@@ -543,9 +599,27 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 12:25:09 GMT
+    Submission history From: Yihuai Lan [view email]
+    [v1] Mon, 23 Oct 2023 14:35:26 UTC (2,543 KB)
+    [v2] Wed, 6 Mar 2024 12:25:09 UTC (4,980 KB)
+    [v3] Thu, 7 Mar 2024 08:41:58 UTC (4,982 KB)
     Yihuai Lan, Zhiqiang Hu, Lei Wang, Yang Wang, Deheng Ye, Peilin Zhao, Ee-Peng Lim, Hui Xiong, Hao Wang
 
-Categories
+This paper aims to investigate the open research problem of uncovering the social behaviors of LLM-based agents. To achieve this goal, we adopt Avalon, a representative communication game, as the environment and use system prompts to guide LLM agents to play the game. While previous studies have conducted preliminary investigations into gameplay with LLM agents, there lacks research on their social behaviors. In this paper, we present a novel framework designed to seamlessly adapt to Avalon gameplay. The core of our proposed framework is a multi-agent system that enables efficient communication and interaction among agents. We evaluate the performance of our framework based on metrics from two perspectives: winning the game and analyzing the social behaviors of LLM agents. Our results demonstrate the effectiveness of our framework in generating adaptive and intelligent agents and highlight the potential of LLM-based agents in addressing the challenges associated with dynamic social environment interaction. By analyzing the social behaviors of LLM agents from the aspects of both collaboration and confrontation, we provide insights into the research and applications of this domain. Our code is publicly available at this https URL
+
+------------
+
+`[2311.14479] Controlled Text Generation via Language Model Arithmetic <https://arxiv.org/abs/2311.14479>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 09:36:54 GMT
+    Submission history From: Jasper Dekoninck [view email]
+    [v1] Fri, 24 Nov 2023 13:41:12 UTC (464 KB)
+    [v2] Wed, 6 Mar 2024 09:36:54 UTC (465 KB)
+    Jasper Dekoninck, Marc Fischer, Luca Beurer-Kellner, Martin Vechev
+
+As Large Language Models (LLMs) are deployed more widely, customization with respect to vocabulary, style, and character becomes more important. In this work, we introduce model arithmetic, a novel inference framework for composing and biasing LLMs without the need for model (re)training or highly specific datasets. In addition, the framework allows for more precise control of generated text than direct prompting and prior controlled text generation (CTG) techniques. Using model arithmetic, we can express prior CTG techniques as simple formulas and naturally extend them to new and more effective formulations. Further, we show that speculative sampling, a technique for efficient LLM sampling, extends to our setting. This enables highly efficient text generation with multiple composed models with only marginal overhead over a single model. Our empirical evaluation demonstrates that model arithmetic allows fine-grained control of generated text while outperforming state-of-the-art on the task of toxicity reduction. We release an open source easy-to-use implementation of our framework at this https URL.
 
 ------------
 
@@ -554,9 +628,27 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 02:19:03 GMT
+    Submission history From: Jingwei Yi [view email]
+    [v1] Thu, 21 Dec 2023 01:08:39 UTC (946 KB)
+    [v2] Wed, 6 Mar 2024 02:19:03 UTC (1,433 KB)
+    [v3] Fri, 8 Mar 2024 07:58:48 UTC (1,433 KB)
     Jingwei Yi, Yueqi Xie, Bin Zhu, Emre Kiciman, Guangzhong Sun, Xing Xie, Fangzhao Wu
 
-Categories
+The integration of large language models (LLMs) with external content has enabled more up-to-date and wide-ranging applications of LLMs, such as Microsoft Copilot. However, this integration has also exposed LLMs to the risk of indirect prompt injection attacks, where an attacker can embed malicious instructions within external content, compromising LLM output and causing responses to deviate from user expectations. To investigate this important but underexplored issue, we introduce the first benchmark for indirect prompt injection attacks, named BIPIA, to evaluate the risk of such attacks. Based on the evaluation, our work makes a key analysis of the underlying reason for the success of the attack, namely the inability of LLMs to distinguish between instructions and external content and the absence of LLMs' awareness to not execute instructions within external content. Building upon this analysis, we develop two black-box methods based on prompt learning and a white-box defense method based on fine-tuning with adversarial training accordingly. Experimental results demonstrate that black-box defenses are highly effective in mitigating these attacks, while the white-box defense reduces the attack success rate to near-zero levels. Overall, our work systematically investigates indirect prompt injection attacks by introducing a benchmark, analyzing the underlying reason for the success of the attack, and developing an initial set of defenses.
+
+------------
+
+`[2401.11389] MedLM: Exploring Language Models for Medical Question Answering Systems <https://arxiv.org/abs/2401.11389>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 03:26:46 GMT
+    Submission history From: Vivek Sharma [view email]
+    [v1] Sun, 21 Jan 2024 03:37:47 UTC (312 KB)
+    [v2] Wed, 6 Mar 2024 03:26:46 UTC (312 KB)
+    Niraj Yagnik, Jay Jhaveri, Vivek Sharma, Gabriel Pila
+
+In the face of rapidly expanding online medical literature, automated systems for aggregating and summarizing information are becoming increasingly crucial for healthcare professionals and patients. Large Language Models (LLMs), with their advanced generative capabilities, have shown promise in various NLP tasks, and their potential in the healthcare domain, particularly for Closed-Book Generative QnA, is significant. However, the performance of these models in domain-specific tasks such as medical Q&A remains largely unexplored. This study aims to fill this gap by comparing the performance of general and medical-specific distilled LMs for medical Q&A. We aim to evaluate the effectiveness of fine-tuning domain-specific LMs and compare the performance of different families of Language Models. The study will address critical questions about these models' reliability, comparative performance, and effectiveness in the context of medical Q&A. The findings will provide valuable insights into the suitability of different LMs for specific applications in the medical domain.
 
 ------------
 
@@ -565,9 +657,58 @@ Categories
 ::
 
     replaced with revised version Tue, 5 Mar 2024 20:55:35 GMT
+    Submission history From: Ritik Sachin Parkar [view email]
+    [v1] Mon, 29 Jan 2024 20:44:10 UTC (10,251 KB)
+    [v2] Tue, 20 Feb 2024 07:58:23 UTC (10,172 KB)
+    [v3] Fri, 23 Feb 2024 22:28:17 UTC (10,172 KB)
+    [v4] Tue, 5 Mar 2024 20:55:35 UTC (10,172 KB)
     Ritik Sachin Parkar, Jaehyung Kim, Jong Inn Park, Dongyeop Kang
 
-Categories
+Instruction tuning benefits from large and diverse datasets, however creating such datasets involves a high cost of human labeling. While synthetic datasets generated by large language models (LLMs) have partly solved this issue, they often contain low-quality data. One effective solution is selectively annotating unlabelled instructions, especially given the relative ease of acquiring unlabeled instructions or texts from various sources. However, how to select unlabelled instructions is not well-explored, especially in the context of LLMs. Further, traditional data selection methods, relying on input embedding space density, tend to underestimate instruction sample complexity, whereas those based on model prediction uncertainty often struggle with synthetic label quality. Therefore, we introduce SelectLLM, an alternative framework that leverages the capabilities of LLMs to more effectively select unlabeled instructions. SelectLLM consists of two key steps: Coreset-based clustering of unlabelled instructions for diversity and then prompting a LLM to identify the most beneficial instructions within each cluster. Our experiments demonstrate that SelectLLM matches or outperforms other state-of-the-art methods in instruction tuning benchmarks. It exhibits remarkable consistency across human and synthetic datasets, along with better cross-dataset generalization, as evidenced by a 10% performance improvement on the Cleaned Alpaca test set when trained on Dolly data. All code and data are publicly available (this https URL).
+
+------------
+
+`[2402.03223] English Prompts are Better for NLI-based Zero-Shot Emotion Classification than Target-Language Prompts <https://arxiv.org/abs/2402.03223>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 11:06:42 GMT
+    Submission history From: Roman Klinger [view email]
+    [v1] Mon, 5 Feb 2024 17:36:19 UTC (220 KB)
+    [v2] Mon, 4 Mar 2024 15:31:48 UTC (220 KB)
+    [v3] Wed, 6 Mar 2024 11:06:42 UTC (220 KB)
+    [v4] Thu, 7 Mar 2024 17:18:18 UTC (207 KB)
+    Patrick Barei{\ss} and Roman Klinger and Jeremy Barnes
+
+Emotion classification in text is a challenging task due to the processes involved when interpreting a textual description of a potential emotion stimulus. In addition, the set of emotion categories is highly domain-specific. For instance, literature analysis might require the use of aesthetic emotions (e.g., finding something beautiful), and social media analysis could benefit from fine-grained sets (e.g., separating anger from annoyance) than only those that represent basic categories as they have been proposed by Paul Ekman (anger, disgust, fear, joy, surprise, sadness). This renders the task an interesting field for zero-shot classifications, in which the label set is not known at model development time. Unfortunately, most resources for emotion analysis are English, and therefore, most studies on emotion analysis have been performed in English, including those that involve prompting language models for text labels. This leaves us with a research gap that we address in this paper: In which language should we prompt for emotion labels on non-English texts? This is particularly of interest when we have access to a multilingual large language model, because we could request labels with English prompts even for non-English data. Our experiments with natural language inference-based language models show that it is consistently better to use English prompts even if the data is in a different language.
+
+------------
+
+`[2402.13874] $Se^2$: Sequential Example Selection for In-Context Learning <https://arxiv.org/abs/2402.13874>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 14:46:30 GMT
+    Submission history From: Haoyu Liu [view email]
+    [v1] Wed, 21 Feb 2024 15:35:04 UTC (3,520 KB)
+    [v2] Wed, 6 Mar 2024 14:46:30 UTC (3,553 KB)
+    Haoyu Liu, Jianfeng Liu, Shaohan Huang, Yuefeng Zhan, Hao Sun, Weiwei Deng, Furu Wei, Qi Zhang
+
+The remarkable capability of large language models (LLMs) for in-context learning (ICL) needs to be activated by demonstration examples. Prior work has extensively explored the selection of examples for ICL, predominantly following the "select then organize" paradigm, such approaches often neglect the internal relationships between examples and exist an inconsistency between the training and inference. In this paper, we formulate the problem as a $\textit{se}$quential $\textit{se}$lection problem and introduce $Se^2$, a sequential-aware method that leverages the LLM's feedback on varying context, aiding in capturing inter-relationships and sequential information among examples, significantly enriching the contextuality and relevance of ICL prompts. Meanwhile, we utilize beam search to seek and construct example sequences, enhancing both quality and diversity. Extensive experiments across 23 NLP tasks from 8 distinct categories illustrate that $Se^2$ markedly surpasses competitive baselines and achieves 42% relative improvement over random selection. Further in-depth analysis show the effectiveness of proposed strategies, highlighting $Se^2$'s exceptional stability and adaptability across various scenarios. Our code will be released to facilitate future research.
+
+------------
+
+`[2402.16029] GraphWiz: An Instruction-Following Language Model for Graph Problems <https://arxiv.org/abs/2402.16029>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 13:52:12 GMT
+    Submission history From: Nuo Chen [view email]
+    [v1] Sun, 25 Feb 2024 08:41:32 UTC (1,180 KB)
+    [v2] Wed, 6 Mar 2024 13:52:12 UTC (1,180 KB)
+    Nuo Chen, Yuhan Li, Jianheng Tang, Jia Li
+
+Large language models (LLMs) have achieved impressive success across several fields, but their proficiency in understanding and resolving complex graph problems is less explored. To bridge this gap, we introduce GraphInstruct, a novel and comprehensive instruction-tuning dataset designed to equip language models with the ability to tackle a broad spectrum of graph problems using explicit reasoning paths. Utilizing GraphInstruct, we build GraphWiz, an open-source language model capable of resolving various graph problem types while generating clear reasoning processes. To enhance the model's capability and reliability, we incorporate the Direct Preference Optimization (DPO) framework into the graph problem-solving context. The enhanced model, GraphWiz-DPO, achieves an average accuracy of 65% across nine tasks with different complexity levels, surpassing GPT-4 which has an average accuracy of 43.8%. Moreover, our research delves into the delicate balance between training data volume and model performance, highlighting the potential for overfitting with increased data. We also explore the transferability of the model's reasoning ability across different graph tasks, indicating the model's adaptability and practical application potential. Our investigation offers a new blueprint and valuable insights for developing LLMs specialized in graph reasoning and problem-solving.
 
 ------------
 
@@ -576,9 +717,15 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 02:34:05 GMT
+    Submission history From: Amit Das [view email]
+    [v1] Mon, 4 Mar 2024 20:34:58 UTC (300 KB)
+    [v2] Wed, 6 Mar 2024 02:34:05 UTC (300 KB)
+    [v3] Thu, 7 Mar 2024 02:18:35 UTC (300 KB)
+    [v4] Mon, 25 Mar 2024 23:09:58 UTC (300 KB)
+    [v5] Thu, 28 Mar 2024 14:44:48 UTC (300 KB)
     Amit Das, Mostafa Rahgouy, Dongji Feng, Zheng Zhang, Tathagata Bhattacharya, Nilanjana Raychawdhary, Mary Sandage, Lauramarie Pope, Gerry Dozier and Cheryl Seals
 
-Categories
+The widespread presence of hateful languages on social media has resulted in adverse effects on societal well-being. As a result, it has become very important to address this issue with high priority. Hate speech or offensive languages exist in both explicit and implicit forms, with the latter being more challenging to detect. Current research in this domain encounters several challenges. Firstly, the existing datasets primarily rely on the collection of texts containing explicit offensive keywords, making it challenging to capture implicitly offensive contents that are devoid of these keywords. Secondly, usual methodologies tend to focus solely on textual analysis, neglecting the valuable insights that community information can provide. In this research paper, we introduce a novel dataset OffLanDat, a community based implicit offensive language dataset generated by ChatGPT containing data for 38 different target groups. Despite limitations in generating offensive texts using ChatGPT due to ethical constraints, we present a prompt-based approach that effectively generates implicit offensive languages. To ensure data quality, we evaluate our data with human. Additionally, we employ a prompt-based Zero-Shot method with ChatGPT and compare the detection results between human annotation and ChatGPT annotation. We utilize existing state-of-the-art models to see how effective they are in detecting such languages. We will make our code and dataset public for other researchers.
 
 ------------
 
@@ -587,9 +734,27 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 08:43:17 GMT
+    Submission history From: Bin Zhang [view email]
+    [v1] Tue, 5 Mar 2024 13:23:48 UTC (6,143 KB)
+    [v2] Wed, 6 Mar 2024 08:43:17 UTC (2,904 KB)
     Bin Zhang, Yuxiao Ye, Guoqing Du, Xiaoru Hu, Zhishuai Li, Sun Yang, Chi Harold Liu, Rui Zhao, Ziyue Li, Hangyu Mao
 
-Categories
+Large Language Models (LLMs) have emerged as a powerful tool in advancing the Text-to-SQL task, significantly outperforming traditional methods. Nevertheless, as a nascent research field, there is still no consensus on the optimal prompt templates and design frameworks. Additionally, existing benchmarks inadequately explore the performance of LLMs across the various sub-tasks of the Text-to-SQL process, which hinders the assessment of LLMs' cognitive capabilities and the optimization of LLM-based solutions. To address the aforementioned issues, we firstly construct a new dataset designed to mitigate the risk of overfitting in LLMs. Then we formulate five evaluation tasks to comprehensively assess the performance of diverse methods across various LLMs throughout the Text-to-SQL process.Our study highlights the performance disparities among LLMs and proposes optimal in-context learning solutions tailored to each task. These findings offer valuable insights for enhancing the development of LLM-based Text-to-SQL systems.
+
+------------
+
+`[2303.11525] Sparse-IFT: Sparse Iso-FLOP Transformations for Maximizing Training Efficiency <https://arxiv.org/abs/2303.11525>`__
+
+::
+
+    replaced with revised version Tue, 5 Mar 2024 22:12:38 GMT
+    Submission history From: Vithursan Thangarasa [view email]
+    [v1] Tue, 21 Mar 2023 01:06:37 UTC (469 KB)
+    [v2] Sat, 25 Mar 2023 15:35:03 UTC (480 KB)
+    [v3] Tue, 5 Mar 2024 22:12:38 UTC (349 KB)
+    Vithursan Thangarasa, Shreyas Saxena, Abhay Gupta, Sean Lie
+
+Recent research has focused on weight sparsity in neural network training to reduce FLOPs, aiming for improved efficiency (test accuracy w.r.t training FLOPs). However, sparse weight training often sacrifices accuracy, requiring extended training schedules to attain the accuracy of dense models. In contrast, our approach, Sparse Iso-FLOP Transformations (Sparse-IFT), uses sparsity to improve accuracy while maintaining dense model FLOPs. Using a single hyperparameter (i.e., sparsity level), Sparse-IFTs efficiently replace dense layers, expanding the search space for optimal sparse masks. In addition, dynamic sparse training with Sparse-IFT models effectively navigates this larger sparse mask-weight space, which is evidenced by a spectral analysis using Ramanujan graph properties. Our study reveals a robust correlation among mask topology, weights, and final performance. Notably, without adjusting hyperparameters, replacing dense layers with Sparse-IFT yields significant improvements, such as a +3.5% boost for ResNet-18 on ImageNet and +0.9% for GPT-3 Small on the Open LLM leaderboard. To our knowledge, this is the first work to demonstrate the use of sparsity for improving the accuracy of dense models through a simple-to-use set of sparse transformations. Code is available at: this https URL.
 
 ------------
 
@@ -598,9 +763,13 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 15:14:11 GMT
+    Submission history From: Théo Vincent [view email]
+    [v1] Wed, 20 Dec 2023 09:33:16 UTC (10,764 KB)
+    [v2] Mon, 12 Feb 2024 15:42:30 UTC (11,178 KB)
+    [v3] Wed, 6 Mar 2024 15:14:11 UTC (11,176 KB)
     Th\'eo Vincent, Alberto Maria Metelli, Boris Belousov, Jan Peters, Marcello Restelli and Carlo D'Eramo
 
-Categories
+Approximate value iteration (AVI) is a family of algorithms for reinforcement learning (RL) that aims to obtain an approximation of the optimal value function. Generally, AVI algorithms implement an iterated procedure where each step consists of (i) an application of the Bellman operator and (ii) a projection step into a considered function space. Notoriously, the Bellman operator leverages transition samples, which strongly determine its behavior, as uninformative samples can result in negligible updates or long detours, whose detrimental effects are further exacerbated by the computationally intensive projection step. To address these issues, we propose a novel alternative approach based on learning an approximate version of the Bellman operator rather than estimating it through samples as in AVI approaches. This way, we are able to (i) generalize across transition samples and (ii) avoid the computationally intensive projection step. For this reason, we call our novel operator projected Bellman operator (PBO). We formulate an optimization problem to learn PBO for generic sequential decision-making problems, and we theoretically analyze its properties in two representative classes of RL problems. Furthermore, we theoretically study our approach under the lens of AVI and devise algorithmic implementations to learn PBO in offline and online settings by leveraging neural network parameterizations. Finally, we empirically showcase the benefits of PBO w.r.t. the regular Bellman operator on several RL problems.
 
 ------------
 
@@ -609,9 +778,28 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 04:28:09 GMT
+    Submission history From: Ruoxi Chen [view email]
+    [v1] Mon, 5 Feb 2024 18:54:43 UTC (5,101 KB)
+    [v2] Tue, 27 Feb 2024 00:09:00 UTC (5,101 KB)
+    [v3] Wed, 6 Mar 2024 04:28:09 UTC (5,101 KB)
     Haibo Jin, Ruoxi Chen, Andy Zhou, Jinyin Chen, Yang Zhang, Haohan Wang
 
-Categories
+The discovery of "jailbreaks" to bypass safety filters of Large Language Models (LLMs) and harmful responses have encouraged the community to implement safety measures. One major safety measure is to proactively test the LLMs with jailbreaks prior to the release. Therefore, such testing will require a method that can generate jailbreaks massively and efficiently. In this paper, we follow a novel yet intuitive strategy to generate jailbreaks in the style of the human generation. We propose a role-playing system that assigns four different roles to the user LLMs to collaborate on new jailbreaks. Furthermore, we collect existing jailbreaks and split them into different independent characteristics using clustering frequency and semantic patterns sentence by sentence. We organize these characteristics into a knowledge graph, making them more accessible and easier to retrieve. Our system of different roles will leverage this knowledge graph to generate new jailbreaks, which have proved effective in inducing LLMs to generate unethical or guideline-violating responses. In addition, we also pioneer a setting in our system that will automatically follow the government-issued guidelines to generate jailbreaks to test whether LLMs follow the guidelines accordingly. We refer to our system as GUARD (Guideline Upholding through Adaptive Role-play Diagnostics). We have empirically validated the effectiveness of GUARD on three cutting-edge open-sourced LLMs (Vicuna-13B, LongChat-7B, and Llama-2-7B), as well as a widely-utilized commercial LLM (ChatGPT). Moreover, our work extends to the realm of vision language models (MiniGPT-v2 and Gemini Vision Pro), showcasing GUARD's versatility and contributing valuable insights for the development of safer, more reliable LLM-based applications across diverse modalities.
+
+------------
+
+`[2402.16899] A priori Estimates for Deep Residual Network in Continuous-time Reinforcement Learning <https://arxiv.org/abs/2402.16899>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 06:59:46 GMT
+    Submission history From: Shuyu Yin [view email]
+    [v1] Sat, 24 Feb 2024 06:31:43 UTC (249 KB)
+    [v2] Wed, 6 Mar 2024 06:59:46 UTC (249 KB)
+    [v3] Thu, 7 Mar 2024 05:33:40 UTC (249 KB)
+    Shuyu Yin, Qixuan Zhou, Fei Wen, Tao Luo
+
+Deep reinforcement learning excels in numerous large-scale practical applications. However, existing performance analyses ignores the unique characteristics of continuous-time control problems, is unable to directly estimate the generalization error of the Bellman optimal loss and require a boundedness assumption. Our work focuses on continuous-time control problems and proposes a method that is applicable to all such problems where the transition function satisfies semi-group and Lipschitz properties. Under this method, we can directly analyze the \emph{a priori} generalization error of the Bellman optimal loss. The core of this method lies in two transformations of the loss function. To complete the transformation, we propose a decomposition method for the maximum operator. Additionally, this analysis method does not require a boundedness assumption. Finally, we obtain an \emph{a priori} generalization error without the curse of dimensionality.
 
 ------------
 
@@ -620,9 +808,44 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 08:07:02 GMT
+    Submission history From: Haoxiang Wang [view email]
+    [v1] Wed, 28 Feb 2024 18:58:25 UTC (320 KB)
+    [v2] Thu, 29 Feb 2024 04:33:29 UTC (320 KB)
+    [v3] Wed, 6 Mar 2024 08:07:02 UTC (320 KB)
     Haoxiang Wang, Yong Lin, Wei Xiong, Rui Yang, Shizhe Diao, Shuang Qiu, Han Zhao, Tong Zhang
 
-Categories
+Fine-grained control over large language models (LLMs) remains a significant challenge, hindering their adaptability to diverse user needs. While Reinforcement Learning from Human Feedback (RLHF) shows promise in aligning LLMs, its reliance on scalar rewards often limits its ability to capture diverse user preferences in real-world applications. To address this limitation, we introduce the Directional Preference Alignment (DPA) framework. Unlike the scalar-reward RLHF, DPA incorporates multi-objective reward modeling to represent diverse preference profiles. Additionally, DPA models user preferences as directions (i.e., unit vectors) in the reward space to achieve user-dependent preference control. Our method involves training a multi-objective reward model and then fine-tuning the LLM with a preference-conditioned variant of Rejection Sampling Finetuning (RSF), an RLHF method adopted by Llama 2. This method enjoys a better performance trade-off across various reward objectives. In comparison with the scalar-reward RLHF, DPA offers users intuitive control over LLM generation: they can arithmetically specify their desired trade-offs (e.g., more helpfulness with less verbosity). We also validate the effectiveness of DPA with real-world alignment experiments on Mistral-7B. Our method provides straightforward arithmetic control over the trade-off between helpfulness and verbosity while maintaining competitive performance with strong baselines such as Direct Preference Optimization (DPO).
+
+------------
+
+`[2401.06401] DevEval: Evaluating Code Generation in Practical Software Projects <https://arxiv.org/abs/2401.06401>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 02:16:51 GMT
+    Submission history From: Jia Li [view email]
+    [v1] Fri, 12 Jan 2024 06:51:30 UTC (826 KB)
+    [v2] Fri, 26 Jan 2024 02:36:27 UTC (826 KB)
+    [v3] Tue, 5 Mar 2024 09:41:48 UTC (1 KB) (withdrawn)
+    [v4] Wed, 6 Mar 2024 02:16:51 UTC (1 KB) (withdrawn)
+    Jia Li, Ge Li, Yunfei Zhao, Yongmin Li, Zhi Jin, Hao Zhu, Huanyu Liu, Kaibo Liu, Lecheng Wang, Zheng Fang, Lanshen Wang, Jiazheng Ding, Xuanming Zhang, Yihong Dong, Yuqi Zhu, Bin Gu, Mengfei Yang
+
+How to evaluate Large Language Models (LLMs) in code generation is an open question. Many benchmarks have been proposed but are inconsistent with practical software projects, e.g., unreal program distributions, insufficient dependencies, and small-scale project contexts. Thus, the capabilities of LLMs in practical projects are still unclear. In this paper, we propose a new benchmark named DevEval, aligned with Developers' experiences in practical projects. DevEval is collected through a rigorous pipeline, containing 2,690 samples from 119 practical projects and covering 10 domains. Compared to previous benchmarks, DevEval aligns to practical projects in multiple dimensions, e.g., real program distributions, sufficient dependencies, and enough-scale project contexts. We assess five popular LLMs on DevEval (e.g., gpt-4, gpt-3.5-turbo, CodeLLaMa, and StarCoder) and reveal their actual abilities in code generation. For instance, the highest Pass@1 of gpt-3.5-turbo only is 42 in our experiments. We also discuss the challenges and future directions of code generation in practical projects. We open-source DevEval and hope it can facilitate the development of code generation in practical projects.
+
+------------
+
+`[2401.10712] Q&A Prompts: Discovering Rich Visual Clues through Mining Question-Answer Prompts for VQA requiring Diverse World Knowledge <https://arxiv.org/abs/2401.10712>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 12:51:11 GMT
+    Submission history From: Haibo Wang [view email]
+    [v1] Fri, 19 Jan 2024 14:22:29 UTC (4,713 KB)
+    [v2] Wed, 6 Mar 2024 12:51:11 UTC (4,911 KB)
+    [v3] Thu, 7 Mar 2024 06:43:56 UTC (4,873 KB)
+    Haibi Wang, Weifeng Ge
+
+With the breakthrough of multi-modal large language models, answering complex visual questions that demand advanced reasoning abilities and world knowledge has become a much more important testbed for developing AI models than ever. However, equipping AI models with robust cross-modality reasoning ability remains challenging since the cognition scheme of humans has not been understood systematically. In this paper, we believe that if we can collect visual clues in the given image as much as possible, we will recognize the image more accurately, understand the question better, recall relevant knowledge more easily, and finally reason out the answer. We discover these rich visual clues by mining question-answer pairs in images and sending them into multi-modal large language models as prompts. We call the proposed method Q&A Prompts. Specifically, we first use the image-answer pairs and the corresponding questions in the training set as inputs and outputs to train a visual question generation model. Then, we use an image tagging model to identify various instances and send packaged image-tag pairs into the visual question generation model to generate relevant questions with the extracted image tags as answers. Finally, we encode these generated question-answer pairs as prompts with a visual-aware prompting module and send them into pre-trained multi-modal large language models to reason out the final answers. Experimental results show that, compared with state-of-the-art methods, our Q&A Prompts achieves substantial improvements on the challenging visual question answering datasets requiring reasoning over diverse world knowledge, such as OK-VQA and A-OKVQA.
 
 ------------
 
@@ -631,6 +854,23 @@ Categories
 ::
 
     replaced with revised version Wed, 6 Mar 2024 18:44:13 GMT
+    Submission history From: Peter S. Park [view email]
+    [v1] Thu, 29 Feb 2024 17:27:59 UTC (248 KB)
+    [v2] Wed, 6 Mar 2024 18:44:13 UTC (248 KB)
     Philipp Schoenegger, Indre Tuminauskaite, Peter S. Park, Philip E. Tetlock
 
-Categories
+Human forecasting accuracy in practice relies on the 'wisdom of the crowd' effect, in which predictions about future events are significantly improved by aggregating across a crowd of individual forecasters. Past work on the forecasting ability of large language models (LLMs) suggests that frontier LLMs, as individual forecasters, underperform compared to the gold standard of a human crowd forecasting tournament aggregate. In Study 1, we expand this research by using an LLM ensemble approach consisting of a crowd of twelve LLMs. We compare the aggregated LLM predictions on 31 binary questions to that of a crowd of 925 human forecasters from a three-month forecasting tournament. Our preregistered main analysis shows that the LLM crowd outperforms a simple no-information benchmark and is not statistically different from the human crowd. In exploratory analyses, we find that these two approaches are equivalent with respect to medium-effect-size equivalence bounds. We also observe an acquiescence effect, with mean model predictions being significantly above 50%, despite an almost even split of positive and negative resolutions. Moreover, in Study 2, we test whether LLM predictions (of GPT-4 and Claude 2) can be improved by drawing on human cognitive output. We find that both models' forecasting accuracy benefits from exposure to the median human prediction as information, improving accuracy by between 17% and 28%: though this leads to less accurate predictions than simply averaging human and machine forecasts. Our results suggest that LLMs can achieve forecasting accuracy rivaling that of human crowd forecasting tournaments: via the simple, practically applicable method of forecast aggregation. This replicates the 'wisdom of the crowd' effect for LLMs, and opens up their use for a variety of applications throughout society.
+
+------------
+
+`[2403.02910] ImgTrojan: Jailbreaking Vision-Language Models with ONE Image <https://arxiv.org/abs/2403.02910>`__
+
+::
+
+    replaced with revised version Wed, 6 Mar 2024 04:29:32 GMT
+    Submission history From: Xijia Tao [view email]
+    [v1] Tue, 5 Mar 2024 12:21:57 UTC (9,475 KB)
+    [v2] Wed, 6 Mar 2024 04:29:32 UTC (9,475 KB)
+    Xijia Tao, Shuai Zhong, Lei Li, Qi Liu, Lingpeng Kong
+
+There has been an increasing interest in the alignment of large language models (LLMs) with human values. However, the safety issues of their integration with a vision module, or vision language models (VLMs), remain relatively underexplored. In this paper, we propose a novel jailbreaking attack against VLMs, aiming to bypass their safety barrier when a user inputs harmful instructions. A scenario where our poisoned (image, text) data pairs are included in the training data is assumed. By replacing the original textual captions with malicious jailbreak prompts, our method can perform jailbreak attacks with the poisoned images. Moreover, we analyze the effect of poison ratios and positions of trainable parameters on our attack's success rate. For evaluation, we design two metrics to quantify the success rate and the stealthiness of our attack. Together with a list of curated harmful instructions, a benchmark for measuring attack efficacy is provided. We demonstrate the efficacy of our attack by comparing it with baseline methods.
