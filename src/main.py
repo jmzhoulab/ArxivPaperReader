@@ -1,13 +1,14 @@
 import os
 import re
 import textwrap
+from tqdm import tqdm
 
 from email_helper import EmailReader
 from paper_parser import PaperParser
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-DATA_DIR = os.path.join(BASE_DIR, 'data')
+DATA_DIR = os.path.join(BASE_DIR, 'datasets')
 DOCS_DIR = os.path.join(BASE_DIR, 'docs', 'source')
 
 
@@ -108,7 +109,7 @@ if __name__=='__main__':
     # items = paper_from_email(latest_date=latest_date)
     items = paper_from_path(path=DATA_DIR, min_date=latest_date)
     max_date = latest_date
-    for item in items:
+    for item in tqdm(items, position=0, desc=f'Processing', leave=False, colour='green', ncols=80):
         if len(item['parts']) == 0:
             print("未发现附件", item)
             continue
