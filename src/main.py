@@ -52,7 +52,7 @@ def get_save_dir(time: str):
         idx = index_lines.index('.. toctree::\n') + 1
         with open(os.path.join(DOCS_DIR, 'index.rst'), 'w') as f:
             f.writelines(index_lines[:idx]+['\n'])
-            f.writelines(sorted(set(index_lines[idx:])))
+            f.writelines(sorted(set(index_lines[idx:]), reverse=True))
     return save_dir
 
 
@@ -65,7 +65,7 @@ def update_index(file_path: str):
     idx = index_lines.index('   :maxdepth: 3\n') + 1
     with open(os.path.join(index_dir, 'index.rst'), 'w') as f:
         f.writelines(index_lines[:idx]+['\n'])
-        f.writelines(sorted(set(index_lines[idx:])))
+        f.writelines(sorted(set(index_lines[idx:]), reverse=True))
 
 
 def paper_from_email(latest_date: str):
@@ -82,7 +82,7 @@ def paper_from_email(latest_date: str):
     return emails
 
 
-def paper_from_path(path: str, min_date: str, max_date: str=None):
+def paper_from_path(path: str, min_date: str, max_date: str=None, filetype: str='txt'):
     print('scan dir:', path)
     items = []
     max_date = max_date or '999999'
@@ -92,7 +92,7 @@ def paper_from_path(path: str, min_date: str, max_date: str=None):
         if os.path.isdir(sub_path):
             items.extend(paper_from_path(sub_path, min_date, max_date))
             continue
-        if not name.endswith('.txt'):
+        if not name.endswith(f'.{filetype}'):
             continue
         file_date = re.findall('\d{6}', name)[0]
         if file_date <= min_date or file_date > max_date:
@@ -107,7 +107,7 @@ if __name__=='__main__':
     parser = PaperParser()
     
     # items = paper_from_email(latest_date=latest_date)
-    items = paper_from_path(path=DATA_DIR, min_date=latest_date)
+    items = paper_from_path(path=DATA_DIR, min_date=latest_date, filetype='txt')
     max_date = latest_date
     for item in tqdm(items, position=0, desc=f'Processing', leave=False, colour='green', ncols=80):
         if len(item['parts']) == 0:
