@@ -2,7 +2,16 @@
 
 python src/main.py
 
-git add docs data latest.date
+cd datasets
+
+git add .
+
+git commit -m "$(git status -s)"
+git push
+
+cd ..
+
+git add docs datasets latest.date
 
 git_status=$(git status -s | grep "^[AM]")
 
