@@ -6,8 +6,14 @@ cd datasets
 
 git add .
 
-git commit -m "$(git status -s)"
-git push
+git_status=$(git status -s | grep "^[AM]")
+if [ -z "$git_status" ]; then
+    echo "datasets没有发现新增或者变更文件"
+else
+    echo "datasets有已暂存的变更，准备提交："
+    git commit -m "$(git status -s)"
+    git push
+fi
 
 cd ..
 
