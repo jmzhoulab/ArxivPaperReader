@@ -12,12 +12,13 @@ if [ -z "$git_status" ]; then
 else
     echo "datasets有已暂存的变更，准备提交："
     git commit -m "$(git status -s)"
+    git pull --rebase
     git push
 fi
 
 cd ..
 
-git add docs datasets latest.date
+git add docs datasets latest.date update.sh
 
 git_status=$(git status -s | grep "^[AM]")
 
