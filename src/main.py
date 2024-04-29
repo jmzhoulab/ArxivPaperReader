@@ -94,6 +94,9 @@ def paper_from_path(path: str, min_date: str, max_date: str=None, filetype: str=
             continue
         if not name.endswith(f'.{filetype}'):
             continue
+        json_path = re.sub(f'.{filetype}$', '.json', sub_path)
+        if os.path.exists(json_path):
+            sub_path = json_path
         file_date = re.findall('\d{6}', name)[0]
         if file_date <= min_date or file_date > max_date:
             continue

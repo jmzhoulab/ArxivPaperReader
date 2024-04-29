@@ -61,6 +61,7 @@ class PaperParser:
         file_name = os.path.basename(input_file)
         outfile = open(output_file, mode='w', encoding='utf-8')
         outfile.write(f"{title}\n========\n\n")
+        is_first = True
         for content in tqdm(lines, position=1, desc=file_name, leave=False, colour='green', ncols=80):
             item = json.loads(content.strip())
             # 只考虑包含关键词的
