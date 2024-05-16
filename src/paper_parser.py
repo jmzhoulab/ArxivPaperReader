@@ -55,14 +55,10 @@ def parse_history(byte_content):
 
 class PaperParser:
     def __init__(self, 
-                 key_words: list=['LLM', 'large language model'],
-                 core_words: list=[],
-                 survey_file: str=None,
-                 benchmark_file: str=None) -> None:
-        self.key_words = key_words
-        self.core_words = core_words
-        self.survey_file = survey_file
-        self.benchmark_file = benchmark_file
+                 filter_words: list=['LLM', 'large language model'],
+                 category_words: dict={}) -> None:
+        self.filter_words = filter_words
+        self.category_words = category_words
     
     def update_insert_file(self, filepth, title, items):
         if filepth is None or len(items) == 0:
@@ -85,43 +81,47 @@ class PaperParser:
         with open(filepth, "w", encoding='utf-8') as file:
             file.write(all_content)
 
+    def add_category_items(self, category_items, content, item):
+        added = False
+        for key, items in category_items.items():
+            words = self.category_words[key]
+            if any([w.lower() in content.lower() for w in words]):
+                items.append(item)
+                added = True
+        return added
+
     def extra_paper_from_json(self, input_file: str, output_file: str, title: str=None):
         lines = open(input_file, encoding='utf-8').readlines()
         file_name = os.path.basename(input_file)
         outfile = open(output_file, mode='w', encoding='utf-8')
         outfile.write(f"{title}\n========\n\n")
         outfile.flush()
-        core_items = []
+
+        category_items = {key: [] for key in self.category_words.keys()}
         other_items = []
-        survey_itmes = []
-        benchmark_itmes = []
 
         for content in tqdm(lines, position=1, desc=file_name, leave=False, colour='green', ncols=80):
             item = json.loads(content.strip())
             # 只考虑包含关键词的
             title_abstract = item['title'].lower() + '\n' + item['abstract'].lower()
-            if not any([kw.lower() in title_abstract for kw in self.key_words]):
+            if not any([kw.lower() in title_abstract for kw in self.filter_words]):
                 continue
             item.pop('datadate')
             out_content = TEMPLATE.format(**item)
-            if any([kw.lower() in item['title'].lower() for kw in self.core_words]):
-                core_items.append(out_content)
-            else:
+
+            added = self.add_category_items(category_items, item['title'], out_content)
+            if not added:
                 other_items.append(out_content)
-            if 'survey' in item['title'].lower():
-                survey_itmes.append(out_content)
-            if 'benchmark' in item['title'].lower():
-                benchmark_itmes.append(out_content)
-        if self.core_words:
-            outfile.write('**About ' + ', '.join(self.core_words) + f' papers({len(core_items)})**\n\n')
-            outfile.write('\n\n'.join(core_items)+'\n\n')
+        
+        category_items['Other'] = other_items
+        for key, items in category_items.items():
+            if len(items) == 0:
+                continue
+            sub_title = f'{key} ({len(items)})'
+            overline = '-'*len(sub_title)
+            outfile.write(f'{overline}\n{sub_title}\n{overline}\n\n')
+            outfile.write('\n\n'.join(items)+'\n\n')
             outfile.flush()
-        
-        self.update_insert_file(self.survey_file, title, survey_itmes)
-        self.update_insert_file(self.benchmark_file, title, benchmark_itmes)
-        
-        outfile.write('**About other LLM '+ f' papers({len(other_items)})**\n\n')
-        outfile.write('\n\n'.join(other_items))
         outfile.close()
 
     def extra_paper(self, input_file: str, output_file: str, title: str=None, date: str=None):

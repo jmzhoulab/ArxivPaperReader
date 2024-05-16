@@ -108,10 +108,14 @@ if __name__=='__main__':
     latest_date = get_latest_date()
 
     parser = PaperParser(
-        core_words=['Reasoning', 'Agent', 'Decoding', 'In-Context Learning', 'Accelerate'],
-        survey_file=os.path.join(DOCS_DIR, 'survey', 'index.rst'),
-        benchmark_file=os.path.join(DOCS_DIR, 'benchmark', 'index.rst')
-    )
+        category_words={
+            'Survey': ['survey'],
+            'Benchmark': ['benchmark'],
+            'Accelerate': ['Accelerate', 'Decoding'],
+            'In-Context Learning': ['In-Context Learning'],
+            'Reasoning': ['Reasoning'],
+            'Agent': ['Agent']
+        })
 
     # items = paper_from_email(latest_date=latest_date)
     items = paper_from_path(path=DATA_DIR, min_date=latest_date, filetype='txt')
