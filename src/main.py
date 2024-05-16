@@ -111,9 +111,11 @@ if __name__=='__main__':
         category_words={
             'Survey': ['survey'],
             'Benchmark': ['benchmark'],
-            'Accelerate': ['Accelerate', 'Decoding'],
-            'In-Context Learning': ['In-Context Learning'],
+            'Accelerate': ['Accelerate', 'Decoding', 'Efficient', 'Accelerating'],
+            'In-Context Learning': ['In-Context Learning', 'Memory Learning'],
             'Reasoning': ['Reasoning'],
+            'ToolUse': ['tool', 'api'],
+            'Retrieval-Augmented': ['Retrieval', 'Retriever', 'RAG'],
             'Agent': ['Agent']
         })
 

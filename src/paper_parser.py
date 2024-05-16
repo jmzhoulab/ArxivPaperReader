@@ -168,4 +168,4 @@ class PaperParser:
         print(redundant.strip())
         print("---------------------------------------------------------------------------\n")
         all_out.close()
-        self.extra_paper_from_json(input_file.replace('.txt', '.json'), output_file, title)
+        self.extra_paper_from_json(input_file.replace('.txt', '.json'), output_file, date)
