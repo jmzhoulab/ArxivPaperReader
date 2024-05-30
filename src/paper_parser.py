@@ -5,6 +5,8 @@ import requests
 from lxml import etree
 from tqdm import tqdm
 
+from translate import YoudaoTranslator
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CACHE_DIR = os.path.join(BASE_DIR, '.cache')
 
@@ -12,7 +14,7 @@ PATTERN = re.compile(r'.*?Date:(?P<date>.*?GMT).*?Title:(?P<title>.*?)Authors:(?
 PATTERN_revised = re.compile(r'.*?(?P<date>replaced.*?GMT).*?Title:(?P<title>.*?)Authors:(?P<authors>.*?)(?P<abstract>Categories.*?).*?(?P<url>https://arxiv.org/.*?)[ ,].*?', re.DOTALL)
 
 TEMPLATE = """
-`[{arxiv_id}] {title} <{url}>`__
+`[{arxiv_id}] {title} <{url}>`__ {title_zh}
 
 ::
 
@@ -54,9 +56,11 @@ def parse_history(byte_content):
 
 
 class PaperParser:
-    def __init__(self, 
+    def __init__(self,
+                 translator: YoudaoTranslator=None,
                  filter_words: list=['LLM', 'large language model'],
                  category_words: dict={}) -> None:
+        self.translator = translator
         self.filter_words = filter_words
         self.category_words = category_words
     
@@ -100,6 +104,8 @@ class PaperParser:
         category_items = {key: [] for key in self.category_words.keys()}
         other_items = []
 
+        index_contents = []
+
         for content in tqdm(lines, position=1, desc=file_name, leave=False, colour='green', ncols=80):
             item = json.loads(content.strip())
             # 只考虑包含关键词的
@@ -107,13 +113,20 @@ class PaperParser:
             if not any([kw.lower() in title_abstract for kw in self.filter_words]):
                 continue
             item.pop('datadate')
-            out_content = TEMPLATE.format(**item)
-
+            title_zh = ''
+            try:
+                if self.translator is not None:
+                    title_zh = self.translator.translate(text=item['title'])
+            except Exception as e:
+                print(f"translate error {e}")
+            out_content = TEMPLATE.format(title_zh=title_zh, **item)
             added = self.add_category_items(category_items, item['title'], out_content)
             if not added:
                 other_items.append(out_content)
+                index_contents.append(f"`[{item['arxiv_id']}] {item['title']} <{item['url']}>`__ {title_zh}".strip())
         
         category_items['Other'] = other_items
+        category_items['Index'] = index_contents
         for key, items in category_items.items():
             if len(items) == 0:
                 continue

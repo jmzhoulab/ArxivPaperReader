@@ -1,15 +1,27 @@
 import os
 import re
+import sys
 import textwrap
 from tqdm import tqdm
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from email_helper import EmailReader
 from paper_parser import PaperParser
+from translate import YoudaoTranslator
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'datasets')
 DOCS_DIR = os.path.join(BASE_DIR, 'docs', 'source')
+
+if sys.platform.startswith('linux'):            # Linux
+    HOME_DIR = os.path.expanduser("~")
+elif sys.platform.startswith('darwin'):         # MacOS
+    HOME_DIR = os.getenv("HOME")
+else:
+    HOME_DIR = os.getenv("USERPROFILE")             # Windows
 
 
 def get_latest_date():
@@ -69,9 +81,6 @@ def update_index(file_path: str):
 
 
 def paper_from_email(latest_date: str):
-    from dotenv import load_dotenv
-
-    load_dotenv()
     email_user = os.getenv('EMAIL_USER', None)
     auth_code = os.getenv('EMAIL_AUTH_CODE', None)
 
@@ -106,12 +115,16 @@ def paper_from_path(path: str, min_date: str, max_date: str=None, filetype: str=
 
 if __name__=='__main__':
     latest_date = get_latest_date()
-
+    translator = YoudaoTranslator(api_key=os.getenv('YOUDAO_API_KEY', None),
+                            api_secret=os.getenv('YOUDAO_API_SECRET', None),
+                            cache_dir=os.path.join(HOME_DIR, '.cache', 'youdao'),
+                            delta_t=1)
     parser = PaperParser(
+        translator=translator,
         category_words={
             'Survey': ['survey'],
             'Benchmark': ['benchmark'],
-            'Accelerate': ['Accelerate', 'Decoding', 'Efficient', 'Accelerating'],
+            'Accelerate': ['Accelerate', 'Decoding', 'Efficient', 'Accelerating', 'KV cache'],
             'In-Context Learning': ['In-Context Learning', 'Memory Learning'],
             'Reasoning': ['Reasoning'],
             'ToolUse': ['tool', 'api'],
