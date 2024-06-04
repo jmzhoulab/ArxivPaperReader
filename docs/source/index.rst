@@ -15,6 +15,7 @@ Contents
 
 .. toctree::
 
+   202406/index
    202405/index
    202404/index
    202403/index
