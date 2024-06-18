@@ -160,9 +160,13 @@ class PaperParser:
                 abstract = ''.join([a.strip()+'\n' if a.strip().endswith('.') else a.strip()+' ' for a in paper['abstract'].strip().split('\n')]).strip()
                 history = ''
                 if 'replaced with revised version' in paper['date']:
-                    response = requests.get(url=paper['url'], timeout=5)
-                    abstract = parse_abstract(response.content)
-                    history = parse_history(response.content)
+                    try:
+                        response = requests.get(url=paper['url'], timeout=5)
+                        abstract = parse_abstract(response.content)
+                        history = parse_history(response.content)
+                    except Exception as e:
+                        print("获取历史版本信息错误", title)
+                        print("错误异常信息", e)
                 arxiv_id = re.findall('https://arxiv.org/abs/(\d+\.\d+)', paper['url'])[0]
                 submitdate = paper['date']
                 if history:
