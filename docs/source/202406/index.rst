@@ -5,6 +5,7 @@
    :glob:
    :maxdepth: 3
 
+   240619.rst
    240618.rst
    240617.rst
    240614.rst
